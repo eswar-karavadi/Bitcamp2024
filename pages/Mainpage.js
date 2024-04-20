@@ -17,6 +17,11 @@ export default function SignUp() {
                     <button>Machine Availability</button>
                 </Link>
             </View>
+            <View style = {styles.navbar}>
+                <Image source = {require('C:/Users/samik/BitcampProject/assets/SettingsLogo.png')}/>
+                <Image source = {require('C:/Users/samik/BitcampProject/assets/HomeLogo.png')}/>
+                <Image source = {require('C:/Users/samik/BitcampProject/assets/ProfileLogo.png')}/>
+            </View>
             
             <StatusBar style="auto" />
         </View>
