@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 import { Image } from 'react-native';
 import { Link } from "react-router-dom";
 
@@ -8,15 +8,15 @@ export default function Home() {
         <View style={styles.container}>
             <Text style={styles.nameText}>Name</Text>
             <Image source={require('C:/Users/samik/BitcampProject/assets/logo.png')} style={styles.image} />
-            <Link to='/'>
-                <button>Home</button>
-            </Link>
-            <Link to='/SignUp'>
-                <button>SignUp</button>
-            </Link>
-            <Link to='/Login'>
-                <button>Login</button>
-            </Link>
+            <View style={styles.columnContainer}>
+                <Link to='/SignUp'>
+                    <button>Sign Up</button>
+                </Link>
+                <Link to='/Login'>
+                    <button>Login</button>
+                </Link>
+            </View>
+        
             <StatusBar style="auto" />
         </View>
     );
@@ -29,11 +29,20 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    columnContainer: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        position: 'absolute',
+        top: '50%',
+    },
     nameText: {
         fontSize: 24,
         alignItems: 'center',
         position: 'absolute',
         top: '15%',
+    },
+    button: {
+        margin: 10,
     },
     image: {
         width: 150,
