@@ -19,9 +19,6 @@ export default function SignUp() {
             
             <StatusBar style="auto" />
         </View>
-
-
-
 	);
 }
 
