@@ -4,7 +4,7 @@ import { Image } from 'react-native';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home'
 import SignUp from './pages/SignUp'
-import Login from './pages/Login'
+import Login from './pages/LogIn'
 
 function App() {
     return (
