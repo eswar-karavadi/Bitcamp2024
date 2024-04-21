@@ -8,7 +8,7 @@ export default function Home() {
         <View style={styles.container}>
             <View style={styles.columnContainer}>
                 <Text style={styles.nameText}>Name</Text>
-                <Image source={require('C:/Users/samik/BitcampProject/assets/logo.png')} style={styles.image} />
+                <Image source={require('./assets/logo.png')} style={styles.image} />
                 <Link href="/pages/signup" style = {styles.buttons}>Sign Up</Link>
                 <Link href="/pages/login" style = {styles.buttons}>Log In</Link>
            

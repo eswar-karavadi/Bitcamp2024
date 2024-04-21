@@ -9,7 +9,7 @@ export default function Login() {
 	return (
         <View style={styles.container}>
             <Text style={styles.header}>Login</Text>
-            <Image source={require('C:/Users/samik/BitcampProject/assets/logo.png')} style={styles.image} />
+            <Image source={require('./assets/logo.png')} style={styles.image} />
             <View style = {styles.columnContainer}>
                 <View style={styles.rowEmailContainer}>
                     <Text style={styles.nameText}>Email: </Text>
@@ -29,7 +29,7 @@ export default function Login() {
                     />
                 </View>
             </View>
-            <Link style={styles.loginStyle} href="/">Login</Link> 
+            <Link style={styles.loginStyle} href="/pages/mainpage">Login</Link> 
             <StatusBar style="auto" />
         </View>
 	);
