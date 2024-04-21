@@ -1,22 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import { Image } from 'react-native';
-import { Link } from "react-router-dom";
+import { StyleSheet, Text, View, Image, Button } from "react-native";
+import { Link } from 'expo-router';
+
 
 export default function Home() {
     return (
         <View style={styles.container}>
-            <Text style={styles.nameText}>Name</Text>
-            <Image source={require('C:/Users/samik/BitcampProject/assets/logo.png')} style={styles.image} />
-            <View style={styles.columnContainer}>
-                <Link to='/SignUp'>
-                    <button>Sign Up</button>
-                </Link>
-                <Link to='/Login'>
-                    <button>Login</button>
-                </Link>
-            </View>
-        
+
+            <Text>Home Page</Text>
+            <Link href="pages/signup">Go to signup</Link>
+
             <StatusBar style="auto" />
         </View>
     );
