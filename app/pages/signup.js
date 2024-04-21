@@ -1,22 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
-import { Link } from 'react-router-dom';
+import { Link } from 'expo-router';
 
-export default function Login() {
+export default function SignUp() {
 	return (
         <View style={styles.container}>
-            <Text style={styles.header}>Login Screen</Text>
-            <Image source={require('C:/Users/samik/BitcampProject/assets/logo.png')} style={styles.image} />
-            <View style={styles.columnContainer}>
-                <Text style={styles.nameText}>Email: </Text>
-                <Text style={styles.nameText}>Password: </Text>
-                <Link to='/'>
-                    <button>Login</button>
-                </Link>
-            </View>
+
+            <Text>Sign Up Page</Text>
             
+
             <StatusBar style="auto" />
-        </View>
+		</View>
 	);
 }
 
