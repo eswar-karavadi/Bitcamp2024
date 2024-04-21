@@ -3,12 +3,21 @@ import { Stack } from 'expo-router';
 export default function RootLayout() {
     return (
         <Stack>
-            <Stack.Screen name='index' options={{
+            <Stack.Screen 
+            name='index' 
+            options={{
                 headerTitle: "Home",
-                }} />
-            <Stack.Screen name='pages/signup' options={{
+                headerStyle:  {
+                    backgroundColor: 'red',
+                }
+                }} 
+                />
+            <Stack.Screen 
+            name='pages/signup' 
+            options={{
                 headerTitle: "Sign Up",
-                }} />
+                }} 
+                />
         </Stack>
     );
 };

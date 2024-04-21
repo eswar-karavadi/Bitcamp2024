@@ -3,34 +3,21 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import { Link } from 'expo-router';
 
-export default function SignUp() {
-    const [name, setName] = useState('');
+export default function Login() {
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
-    const [confirmPwd, setConfirmPwd] = useState('');
-    
 	return (
-       <View style={styles.container}>
-            <Text style={styles.header}>Sign Up</Text>
+        <View style={styles.container}>
+            <Text style={styles.header}>Login</Text>
             <Image source={require('C:/Users/samik/BitcampProject/assets/logo.png')} style={styles.image} />
-            <View style={styles.columnContainer}>
-
-                <View style={styles.rowNameContainer}>
-                    <Text style={styles.nameText}>Name: </Text>
-                    <TextInput 
-                        style={styles.input} 
-                        placeholder='e.g. Samik Wangneo'
-                        onChangeText={(val) => setName(val)}
-                    />
-                </View>
-
+            <View style = {styles.columnContainer}>
                 <View style={styles.rowEmailContainer}>
                     <Text style={styles.nameText}>Email: </Text>
-                    <TextInput 
-                        style={styles.input} 
-                        placeholder='e.g. rivincity@gmail.com'
-                        onChangeText={(val) => setEmail(val)}
-                    />
+                        <TextInput 
+                            style={styles.input} 
+                            placeholder='e.g. rivincity@gmail.com'
+                            onChangeText={(val) => setEmail(val)}
+                        />
                 </View>
 
                 <View style={styles.rowPasswordContainer}>
@@ -41,19 +28,8 @@ export default function SignUp() {
                         onChangeText={(val) => setPwd(val)}
                     />
                 </View>
-
-                <View style={styles.rowConfirmPasswordContainer}>
-                    <Text style={styles.nameText}>Confirm Password: </Text>
-                    <TextInput 
-                        style={styles.input} 
-                        placeholder='e.g. ********'
-                        onChangeText={(val) => setConfirmPwd(val)}
-                    />
-                </View>
             </View>
-
-            <Link style={styles.registerStyle} href="/">Register</Link> 
-         
+            <Link style={styles.loginStyle} href="/">Login</Link> 
             <StatusBar style="auto" />
         </View>
 	);
@@ -97,11 +73,6 @@ const styles = StyleSheet.create({
         width: 200,
         left: '100%'
     },
-    rowNameContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        top: '0%',    
-    },
     rowEmailContainer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -112,12 +83,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         top: '40%',    
     },
-    rowConfirmPasswordContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        top: '60%',    
-    },
-    registerStyle: {
+    loginStyle: {
         fontSize: 18,
         alignItems: 'center',
         top: '20%',
