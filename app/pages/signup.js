@@ -12,7 +12,7 @@ export default function SignUp() {
 	return (
        <View style={styles.container}>
             <Text style={styles.header}>Sign Up</Text>
-            <Image source={require('C:/Users/samik/BitcampProject/assets/logo.png')} style={styles.image} />
+            <Image source={require('./assets/logo.png')} style={styles.image} />
             <View style={styles.columnContainer}>
 
                 <View style={styles.rowNameContainer}>
