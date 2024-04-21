@@ -1,28 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button } from "react-native";
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Image, Button, TextInput } from "react-native";
 import { Link } from 'expo-router';
 
 
-export default function mainpage() {
+export default function createplanhome() {
+    const [name, setName] = useState('');
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
                 <Image source={require('./assets/logo.png')} style={styles.image} />
-                <Link href="/pages/workoutplan" style = {styles.buttons}>See Workout Plan</Link>
-                <Link href="/pages/workoutbuddy" style = {styles.buttons}>Find Workout Buddy</Link>
-                <Link href="/pages/login" style = {styles.buttons}>Machine Availability</Link>
+                <Text style = {styles.nameText}>Plan Name:</Text>
+                    <TextInput 
+                            style={styles.input} 
+                            placeholder='e.g. Push Pull Legs'
+                            onChangeText={(val) => setName(val)}
+                        />
+                <Link href="/pages/viewmonday" style = {styles.buttons}>Monday</Link>
+                <Link href="/pages/viewtuesday" style = {styles.buttons}>Tuesday</Link>
+                <Link href="/pages/viewwednesday" style = {styles.buttons}>Wednesday</Link>
+                <Link href="/pages/viewthursday" style = {styles.buttons}>Thursday</Link>
+                <Link href="/pages/viewfriday" style = {styles.buttons}>Friday</Link>
+
                 <View style={styles.rowContainer}>
 
                 <Link href="/pages/signup" style={styles.navbar} >
-                  <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
+                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
                 </Link>
 
                 <Link href="/pages/mainpage" style={styles.navbar}>
-                <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
+                    <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
                 </Link>
 
                 <Link href="/pages/profile" style={styles.navbar}>
-                <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
+                    <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
                 </Link>
 
                   
@@ -42,7 +53,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#ffffea',
         alignItems: 'center',
-        justifyContent: 'center',
     },
     columnContainer: {
         flexDirection: 'column',
@@ -53,7 +63,7 @@ const styles = StyleSheet.create({
     nameText: {
         fontSize: 36,
         alignItems: 'center',
-        top: '40%',
+        top: '2%',
     },
     image: {
       width: 50,
@@ -64,7 +74,7 @@ const styles = StyleSheet.create({
     },
     buttons: {
         alignItems: 'center',
-        top: '20%',
+        top: '5%',
         fontSize: 36,
         padding: 40
     },
@@ -72,13 +82,13 @@ const styles = StyleSheet.create({
       width: 150,
       height: 90,
       alignItems: 'center',
-      top: '30%',
+      bottom: '24%',
     },
 
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    top: '50%',
+    top: '40%',
   },
 
   homeLogo: {
@@ -86,6 +96,14 @@ const styles = StyleSheet.create({
     height: 0,
     top: '0%',
     margin: 70,
-  }
+  },
 
+  input: {
+        borderWidth: 1,
+        borderColor: '#777',
+        position: 'absolute',
+        padding: 8,
+        width: 200,
+        top: '10%'
+    }
 });

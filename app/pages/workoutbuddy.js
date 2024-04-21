@@ -4,15 +4,15 @@ import { StyleSheet, Text, View, Image, Button } from "react-native";
 import { Link } from 'expo-router';
 
 
-export default function workoutplan() {
+export default function workoutbuddy() {
     const [counter, setCounter] = useState('0')
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
                 <Image source={require('./assets/logo.png')} style={styles.image} />
-                <Link href="/pages/createplanhome" style = {styles.buttons}>Create Workout Plan</Link>
-                <Link href="/pages/viewplan" style = {styles.buttons}>View Workout Plans</Link>
-                <Text style = {styles.streak}>Current Workout Streak: </Text>
+                <Link href="/pages/findbuddy" style = {styles.buttons}>Find Buddy</Link>
+                <Link href="/pages/viewbuddy" style = {styles.buttons}>View Buddies</Link>
+                <Text style = {styles.streak}>Total Buddies: </Text>
                 <Text style = {styles.streak}>{counter}</Text>
 
                 <View style={styles.rowContainer}>

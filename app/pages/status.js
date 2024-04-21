@@ -1,37 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 import { Link } from 'expo-router';
 
 
-export default function workoutplan() {
-    const [counter, setCounter] = useState('0')
+export default function status() {
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
-                <Image source={require('./assets/logo.png')} style={styles.image} />
-                <Link href="/pages/createplanhome" style = {styles.buttons}>Create Workout Plan</Link>
-                <Link href="/pages/viewplan" style = {styles.buttons}>View Workout Plans</Link>
-                <Text style = {styles.streak}>Current Workout Streak: </Text>
-                <Text style = {styles.streak}>{counter}</Text>
-
-                <View style={styles.rowContainer}>
-
-                  <Link href="/pages/signup" style={styles.navbar} >
-                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
-                  </Link>
-
-                  <Link href="/pages/mainpage" style={styles.navbar}>
-                  <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
-                  </Link>
-
-                  <Link href="/pages/profile" style={styles.navbar}>
-                  <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-                  </Link>
-                </View>
+                <Text style = {styles.nameText}>Breakdown of Status</Text>
+                <Text style = {styles.nameText}>0 - 99 -> Rookie</Text>
+                <Text style = {styles.nameText}>100 - 199 ->Amateur</Text>
+                <Text style = {styles.nameText}>200 - 299 ->Regular</Text>
+                <Text style = {styles.nameText}>300 - 399 ->Pro</Text>
+                <Text style = {styles.nameText}>400 - 499 ->Expert</Text>
                 
            
             </View>
+                            <View style={styles.rowContainer}>
+
+                <Link href="/pages/signup" style={styles.navbar} >
+                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
+                </Link>
+
+                <Link href="/pages/mainpage" style={styles.navbar}>
+                    <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
+                </Link>
+
+                <Link href="/pages/profile" style={styles.navbar}>
+                    <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
+                </Link>
+                </View>
             <StatusBar style="auto" />
         </View>
     );
@@ -49,11 +47,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         position: 'absolute',
         top: '0%',
+
     },
     nameText: {
         fontSize: 36,
         alignItems: 'center',
-        top: '40%',
+        top: '25%',
+        margin: 20
     },
     image: {
       width: 50,
@@ -67,12 +67,6 @@ const styles = StyleSheet.create({
         top: '20%',
         fontSize: 36,
         padding: 40
-    },
-    streak: {
-      fontSize: 36,
-      alignItems: 'center',
-      top: '40%',
-      margin: 10
     },
     navbar: {
       width: 150,
