@@ -9,8 +9,8 @@ export default function viewplan() {
             <View style={styles.columnContainer}>
                 <Image source={require('./assets/logo.png')} style={styles.image} />
                 <Link href="/pages/workoutplan" style = {styles.buttons}>Workout Plan 1</Link>
-                <Link href="/pages/login" style = {styles.buttons}>Workout Plan 2</Link>
-                <Link href="/pages/login" style = {styles.buttons}>Workout Plan 3</Link>
+                <Link href="/pages/workoutplan" style = {styles.buttons}>Workout Plan 2</Link>
+                <Link href="/pages/workoutplan" style = {styles.buttons}>Workout Plan 3</Link>
                 <View style={styles.rowContainer}>
 
                 <Link href="/pages/signup" style={styles.navbar} >

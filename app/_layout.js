@@ -165,6 +165,15 @@ export default function RootLayout() {
                 }
             }}
             />
+            <Stack.Screen
+            name='pages/viewbuddy'
+            options={{
+                headerTitle: "View Buddies",
+                headerStyle: {
+                    backgroundColor: '#D90429',
+                }
+            }}
+            />
         </Stack>
     );
 };
