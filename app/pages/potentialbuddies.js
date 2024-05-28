@@ -3,14 +3,23 @@ import { StyleSheet, Text, View, Image, Button } from "react-native";
 import { Link } from 'expo-router';
 
 
-export default function mainpage() {
+export default function potentialbuddies() {
     return (
         <View style={styles.container}>
-            <View style={styles.columnContainer}>
+            <View style={styles.columnContainerMain}>
                 <Image source={require('./assets/logo.png')} style={styles.image} />
-                <Link href="/pages/workoutplan" style = {styles.buttons}>See Workout Plan</Link>
-                <Link href="/pages/workoutbuddy" style = {styles.buttons}>Find Workout Buddy</Link>
-                <Link href="/pages/login" style = {styles.buttons}>Machine Availability</Link>
+                <View style={styles.rowContainer1}>
+                    <Image source={require('./assets/logo.png')} style={styles.avatar}/>
+                    <Link href="/pages/workoutplan" style = {styles.buttons}>Name</Link>
+                </View>
+                <View style={styles.rowContainer2}>
+                    <Image source={require('./assets/logo.png')} style={styles.avatar}/>
+                    <Link href="/pages/login" style = {styles.buttons}>Name</Link>
+                </View>
+                <View style={styles.rowContainer3}>
+                    <Image source={require('./assets/logo.png')} style={styles.avatar}/>
+                    <Link href="/pages/login" style = {styles.buttons}>Name</Link>
+                </View>
                 <View style={styles.rowContainer}>
 
                 <Link href="/pages/signup" style={styles.navbar} >
@@ -80,7 +89,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     top: '50%',
   },
-
+  rowContainer1: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      top: '0%',
+  },
+  rowContainer2: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      top: '20%',
+  },
+  rowContainer3: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      top: '40%',
+  },
   homeLogo: {
     width: 0,
     height: 0,

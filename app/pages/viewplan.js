@@ -1,34 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 import { Link } from 'expo-router';
 
 
-export default function workoutplan() {
-    const [counter, setCounter] = useState('0')
+export default function viewplan() {
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
                 <Image source={require('./assets/logo.png')} style={styles.image} />
-                <Link href="/pages/createplanhome" style = {styles.buttons}>Create Workout Plan</Link>
-                <Link href="/pages/viewplan" style = {styles.buttons}>View Workout Plans</Link>
-                <Text style = {styles.streak}>Current Workout Streak: </Text>
-                <Text style = {styles.streak}>{counter}</Text>
-
+                <Link href="/pages/workoutplan" style = {styles.buttons}>Workout Plan 1</Link>
+                <Link href="/pages/login" style = {styles.buttons}>Workout Plan 2</Link>
+                <Link href="/pages/login" style = {styles.buttons}>Workout Plan 3</Link>
                 <View style={styles.rowContainer}>
 
-                  <Link href="/pages/signup" style={styles.navbar} >
-                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
-                  </Link>
+                <Link href="/pages/signup" style={styles.navbar} >
+                  <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
+                </Link>
 
-                  <Link href="/pages/mainpage" style={styles.navbar}>
-                  <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
-                  </Link>
+                <Link href="/pages/mainpage" style={styles.navbar}>
+                <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
+                </Link>
 
-                  <Link href="/pages/profile" style={styles.navbar}>
-                  <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-                  </Link>
-                </View>
+                <Link href="/pages/profile" style={styles.navbar}>
+                <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
+                </Link>
+
+                  
+                  
+
+                  </View>
                 
            
             </View>
@@ -67,12 +67,6 @@ const styles = StyleSheet.create({
         top: '20%',
         fontSize: 36,
         padding: 40
-    },
-    streak: {
-      fontSize: 36,
-      alignItems: 'center',
-      top: '40%',
-      margin: 10
     },
     navbar: {
       width: 150,
