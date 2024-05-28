@@ -2,13 +2,15 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import { Link } from 'expo-router';
-import { firebase } from '../../Firebase/firebase';
+
 
 export default function SignUp() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
     const [confirmPwd, setConfirmPwd] = useState('');
+
+    const auth = FIREBASE_AUTH;
     
     const handleSignUp = () => {
         firebase.auth().createUserWithEmailAndPassword(email, pwd)
