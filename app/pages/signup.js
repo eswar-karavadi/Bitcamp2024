@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import { Link } from 'expo-router';
+import { firebase } from '../../Firebase/firebase';
 
 export default function SignUp() {
     const [name, setName] = useState('');
@@ -9,6 +10,19 @@ export default function SignUp() {
     const [pwd, setPwd] = useState('');
     const [confirmPwd, setConfirmPwd] = useState('');
     
+    const handleSignUp = () => {
+        firebase.auth().createUserWithEmailAndPassword(email, pwd)
+            .then((userCredential) => {
+                // Signed up successfully
+                console.log('User signed up:', userCredential.user);
+                // You can add additional logic here, like navigating to another screen
+            })
+            .catch((error) => {
+                // Handle errors here
+                console.error('Error signing up:', error.message);
+            });
+    };
+
 	return (
        <View style={styles.container}>
             <Text style={styles.header}>Sign Up</Text>
@@ -52,7 +66,8 @@ export default function SignUp() {
                 </View>
             </View>
 
-            <Link style={styles.registerStyle} href="/">Register</Link> 
+            <Link style={styles.registerStyle} onPress={handleSignUp}>Register</Link>
+
          
             <StatusBar style="auto" />
         </View>
