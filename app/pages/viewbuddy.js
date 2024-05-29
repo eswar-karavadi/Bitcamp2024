@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 import { Link } from 'expo-router';
+import './assets/App.css';
 
 
 export default function viewbuddy() {
@@ -27,7 +28,7 @@ export default function viewbuddy() {
                 </Link>
 
                 <Link href="/pages/mainpage" style={styles.navbar}>
-                <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
+                <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
                 </Link>
 
                 <Link href="/pages/profile" style={styles.navbar}>

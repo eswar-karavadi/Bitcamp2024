@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 import { Link } from 'expo-router';
+import './assets/App.css';
 
 
 export default function potentialbuddies() {
@@ -27,7 +28,7 @@ export default function potentialbuddies() {
                 </Link>
 
                 <Link href="/pages/mainpage" style={styles.navbar}>
-                <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
+                <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
                 </Link>
 
                 <Link href="/pages/profile" style={styles.navbar}>
@@ -78,10 +79,12 @@ const styles = StyleSheet.create({
         padding: 40
     },
     navbar: {
-      width: 150,
-      height: 90,
-      alignItems: 'center',
-      top: '30%',
+        flex: 1,
+        right: '10%',
+        width: 150,
+        height: 90,
+        alignItems: 'center',
+        top: '27%',
     },
 
   rowContainer: {
@@ -104,11 +107,6 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       top: '40%',
   },
-  homeLogo: {
-    width: 0,
-    height: 0,
-    top: '0%',
-    margin: 70,
-  }
+
 
 });

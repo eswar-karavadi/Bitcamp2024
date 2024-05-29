@@ -2,8 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import { Link } from 'expo-router';
+
 import { FIREBASE_AUTH } from '../../Firebase/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+
 
 
 export default function SignUp() {

@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import { Link } from 'expo-router';
+import './assets/App.css';
 
 export default function findbuddy() {
     const [email, setEmail] = useState('');
@@ -36,7 +37,7 @@ export default function findbuddy() {
                 </Link>
 
                 <Link href="/pages/mainpage" style={styles.navbar}>
-                <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
+                <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
                 </Link>
 
                 <Link href="/pages/profile" style={styles.navbar}>
@@ -105,10 +106,12 @@ const styles = StyleSheet.create({
     },
 
     navbar: {
-      width: 150,
-      height: 90,
-      alignItems: 'center',
-      top: '30%',
+        flex: 1,
+        right: '10%',
+        width: 150,
+        height: 90,
+        alignItems: 'center',
+        top: '27%',
     },
 
   rowContainer: {
@@ -117,11 +120,5 @@ const styles = StyleSheet.create({
     top: '50%',
   },
 
-  homeLogo: {
-    width: 0,
-    height: 0,
-    top: '0%',
-    margin: 70,
-  },
  
 });
