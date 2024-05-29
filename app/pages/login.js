@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import { Link } from 'expo-router';
 
+
 export default function Login() {
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
+    const auth = app;
 	return (
         <View style={styles.container}>
             <Text style={styles.header}>Login</Text>
