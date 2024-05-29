@@ -17,11 +17,14 @@
     "@mui/material": "^5.15.19",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/stack": "^6.3.29",
+
     "expo": "^51.0.9",
     "expo-constants": "~16.0.2",
+
     "expo-linking": "~6.3.1",
     "expo-router": "~3.5.14",
     "expo-status-bar": "~1.12.1",
+    "firebase": "^10.12.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.1",
