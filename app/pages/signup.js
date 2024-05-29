@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import { Link } from 'expo-router';
 import { firebase } from '../../Firebase/firebase';
+import './assets/App.css';
 
 export default function SignUp() {
     const [name, setName] = useState('');
