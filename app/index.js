@@ -1,20 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button } from "react-native";
-import { Link } from 'expo-router';
-
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from "react-native";
+import { Link, useRouter } from 'expo-router';
 
 export default function Home() {
+    const router = useRouter();
+
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
-                <Text style={styles.nameText}>Name</Text>
+
+                <Text style={styles.nameText}>TerpFit</Text>
                 <Image source={require('./assets/logo.png')} style={styles.image} />
-                <Link href="/pages/signup" style = {styles.buttons}>Sign Up</Link>
-                <Link href="/pages/login" style = {styles.buttons}>Log In</Link>
+
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/signup")}
+                >
+                    <Text style={styles.buttonText}>Sign Up</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/login")}
+                >
+                    <Text style={styles.buttonText}>Log In</Text>
+                </TouchableOpacity>
            
             </View>
             <StatusBar style="auto" />
-        </View>
+            </View>
     );
 }
 
@@ -34,18 +48,25 @@ const styles = StyleSheet.create({
     nameText: {
         fontSize: 36,
         alignItems: 'center',
-        top: '40%',
+        top: '30%',
     },
     image: {
         width: 150,
         height: 140,
         alignItems: 'center',
-        top: '70%',
+        top: '60%',
     },
     buttons: {
         alignItems: 'center',
-        top: '100%',
+        top: '90%',
+        backgroundColor: '#D90429',
+        padding: 10,
+        borderRadius: 30,
+        marginVertical: 10,
+        borderWidth: 3,
+    },
+    buttonText: {
+        color: 'white',
         fontSize: 36,
-        padding: 10
     }
 });

@@ -1,8 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
-import { Link } from 'expo-router';
-import { firebase } from '../../Firebase/firebase';
+import { StyleSheet, Text, View, Image, Button, TextInput, TouchableOpacity } from 'react-native';
+import { Link, useRouter } from 'expo-router';
 import './assets/App.css';
 
 export default function SignUp() {
@@ -10,19 +9,7 @@ export default function SignUp() {
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
     const [confirmPwd, setConfirmPwd] = useState('');
-    
-    const handleSignUp = () => {
-        firebase.auth().createUserWithEmailAndPassword(email, pwd)
-            .then((userCredential) => {
-                // Signed up successfully
-                console.log('User signed up:', userCredential.user);
-                // You can add additional logic here, like navigating to another screen
-            })
-            .catch((error) => {
-                // Handle errors here
-                console.error('Error signing up:', error.message);
-            });
-    };
+    const router = useRouter();
 
 	return (
        <View style={styles.container}>
@@ -67,7 +54,12 @@ export default function SignUp() {
                 </View>
             </View>
 
-            <Link style={styles.registerStyle} onPress={handleSignUp}>Register</Link>
+            <TouchableOpacity
+                style={styles.buttons}
+                onPress={() => router.push("/pages/mainpage")}
+            >
+                <Text style={styles.buttonText}>Register</Text>
+            </TouchableOpacity>
 
          
             <StatusBar style="auto" />
@@ -137,5 +129,18 @@ const styles = StyleSheet.create({
         fontSize: 18,
         alignItems: 'center',
         top: '20%',
+    },
+    buttons: {
+        alignItems: 'center',
+        top: '20%',
+        backgroundColor: '#D90429',
+        padding: 10,
+        borderRadius: 30,
+        marginVertical: 10,
+        borderWidth: 3,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 36,
     }
 });
