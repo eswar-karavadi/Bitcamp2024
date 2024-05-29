@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    flex: 1;
+    background-color: #ffffea;
+    align-items: center;
+    justify-content: center;
+}
+
+.columnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+}
+
+.nameText {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 40%;
+}
+
+.image {
+    width: 150px;
+    height: 140px;
+    margin-top: 70%;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20%;
+    font-size: 36px;
+    padding: 10px;
+};

@@ -22,7 +22,7 @@ export default function workoutplan() {
                   </Link>
 
                   <Link href="/pages/mainpage" style={styles.navbar}>
-                  <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
+                  <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
                   </Link>
 
                   <Link href="/pages/profile" style={styles.navbar}>
@@ -75,10 +75,12 @@ const styles = StyleSheet.create({
       margin: 10
     },
     navbar: {
-      width: 150,
-      height: 90,
-      alignItems: 'center',
-      top: '30%',
+        flex: 1,
+        right: '10%',
+        width: 150,
+        height: 90,
+        alignItems: 'center',
+        top: '27%',
     },
 
   rowContainer: {
