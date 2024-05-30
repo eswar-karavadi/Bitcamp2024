@@ -31,8 +31,6 @@ export default function Mainpage() {
                     <Text style={styles.buttonText}>Machine Availability</Text>
                 </TouchableOpacity>
 
-                <Link href="/pages/workoutbuddy" style = {styles.buttons}>Find Workout Buddy</Link>
-                <Link href="/pages/login" style = {styles.buttons}>Machine Availability</Link>
                 <View style={styles.rowContainer}>
 
                 <Link href="/pages/signup" style={styles.navbar} >
@@ -84,25 +82,33 @@ const styles = StyleSheet.create({
       top: '2.5%',
       left: '82.5%',
     },
-    buttons: {
-        alignItems: 'center',
-        top: '20%',
-        fontSize: 36,
-        padding: 40
-    },
     navbar: {
       flex: 1,
       right: '10%',
       width: 150,
       height: 90,
       alignItems: 'center',
-      top: '27%',
+      top: '20%',
     },
 
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     top: '50%',
-  }
+  }, 
+
+  buttons: {
+    alignItems: 'center',
+    top: '25%',
+    backgroundColor: '#D90429',
+    padding: 10,
+    borderRadius: 30,
+    marginVertical: 35,
+    borderWidth: 3,
+},
+buttonText: {
+    color: 'white',
+    fontSize: 36,
+}
 
 });
