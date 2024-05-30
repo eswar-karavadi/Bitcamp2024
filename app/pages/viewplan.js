@@ -1,17 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button } from "react-native";
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity} from "react-native";
+import { Link, useRouter } from 'expo-router';
 import './assets/App.css';
 
 
 export default function viewplan() {
+    const router = useRouter();
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
                 <Image source={require('./assets/logo.png')} style={styles.image} />
-                <Link href="/pages/workoutplan" style = {styles.buttons}>Workout Plan 1</Link>
-                <Link href="/pages/workoutplan" style = {styles.buttons}>Workout Plan 2</Link>
-                <Link href="/pages/workoutplan" style = {styles.buttons}>Workout Plan 3</Link>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/workoutplan")}
+                >
+                    <Text style={styles.buttonText}>Workout Plan 1</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/workoutplan")}
+                >
+                    <Text style={styles.buttonText}>Workout Plan 2</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/workoutplan")}
+                >
+                    <Text style={styles.buttonText}>Workout Plan 3</Text>
+                </TouchableOpacity>
+
                 <View style={styles.rowContainer}>
 
                 <Link href="/pages/signup" style={styles.navbar} >
@@ -63,12 +82,7 @@ const styles = StyleSheet.create({
       top: '2.5%',
       left: '82.5%',
     },
-    buttons: {
-        alignItems: 'center',
-        top: '20%',
-        fontSize: 36,
-        padding: 40
-    },
+    
     navbar: {
       width: 150,
       height: 90,
@@ -87,6 +101,20 @@ const styles = StyleSheet.create({
     height: 0,
     top: '0%',
     margin: 70,
-  }
+  },
+
+  buttons: {
+    alignItems: 'center',
+    top: '10%',
+    backgroundColor: '#D90429',
+    padding: 10,
+    borderRadius: 30,
+    marginVertical: 60,
+    borderWidth: 3,
+},
+buttonText: {
+    color: 'white',
+    fontSize: 36,
+}
 
 });

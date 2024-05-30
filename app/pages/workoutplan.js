@@ -1,18 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Button } from "react-native";
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from "react-native";
+import { Link, useRouter } from 'expo-router';
 import './assets/App.css';
 
 
 export default function workoutplan() {
     const [counter, setCounter] = useState('0')
+    const router = useRouter();
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
                 <Image source={require('./assets/logo.png')} style={styles.image} />
-                <Link href="/pages/createplanhome" style = {styles.buttons}>Create Workout Plan</Link>
-                <Link href="/pages/viewplan" style = {styles.buttons}>View Workout Plans</Link>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/createplanhome")}
+                >
+                    <Text style={styles.buttonText}>Create Workout Plan</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/viewplan")}
+                >
+                    <Text style={styles.buttonText}>View Workout Plan</Text>
+                </TouchableOpacity>
+ 
                 <Text style = {styles.streak}>Current Workout Streak: </Text>
                 <Text style = {styles.streak}>{counter}</Text>
 
@@ -63,12 +76,7 @@ const styles = StyleSheet.create({
       top: '2.5%',
       left: '82.5%',
     },
-    buttons: {
-        alignItems: 'center',
-        top: '20%',
-        fontSize: 36,
-        padding: 40
-    },
+
     streak: {
       fontSize: 36,
       alignItems: 'center',
@@ -81,7 +89,8 @@ const styles = StyleSheet.create({
         width: 150,
         height: 90,
         alignItems: 'center',
-        top: '27%',
+        top: '18%',
+        paddingHorizontal: 20
     },
 
   rowContainer: {
@@ -95,6 +104,20 @@ const styles = StyleSheet.create({
     height: 0,
     top: '0%',
     margin: 70,
-  }
+  },
+
+  buttons: {
+    alignItems: 'center',
+    top: '10%',
+    backgroundColor: '#D90429',
+    padding: 10,
+    borderRadius: 30,
+    marginVertical: 30,
+    borderWidth: 3,
+},
+buttonText: {
+    color: 'white',
+    fontSize: 36,
+}
 
 });
