@@ -80,8 +80,8 @@ export default function SignUp() {
                 </View>
             </View>
 
-            <Link style={styles.registerStyle} onPress={handleSignUp} href="/pages/mainpage">Register</Link>
-
+            {/* <Link style={styles.registerStyle} onPress={handleSignUp} href="/pages/mainpage">Register</Link> */}
+            <Button title="Login" onPress={handleSignUp} />
          
             <StatusBar style="auto" />
         </View>

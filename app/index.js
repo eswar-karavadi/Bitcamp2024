@@ -1,20 +1,54 @@
+// import React from 'react';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createStackNavigator } from '@react-navigation/native-stack';
+// import Home from './pages/home';
+// import Login from './pages/login';
+// import SignUp from './pages/signup';
+// // import Mainpage from './pages/mainpage';
+
+// const Stack = createStackNavigator();
+
+// export default function App() {
+//     return (
+//         <NavigationContainer>
+//             <Stack.Navigator initialRouteName="Home">
+//                 <Stack.Screen name="Home" component={Home} />
+//                 <Stack.Screen name="SignUp" component={SignUp} />
+//                 <Stack.Screen name="Login" component={Login} />
+//             </Stack.Navigator>
+//         </NavigationContainer>
+//     );
+// }
+
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button } from "react-native";
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from "react-native";
 import { Link } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
+
+
 
 
 export default function Home() {
-    return (
+    const navigation = useNavigation();
+
+    return ( /* not working*/
+
         <View style={styles.container}>
             <View style={styles.columnContainer}>
                 <Text style={styles.nameText}>Name</Text>
                 <Image source={require('./assets/logo.png')} style={styles.image} />
-                <Link href="/pages/signup" style = {styles.buttons}>Sign Up</Link>
-                <Link href="/pages/login" style = {styles.buttons}>Log In</Link>
+                <TouchableOpacity onPress={() => navigation.navigate('SignUp')} style={styles.buttons}>
+                    <Text style={styles.buttonText}>Sign Up</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.buttons}>
+                    <Text style={styles.buttonText}>Log In</Text>
+                </TouchableOpacity>
            
             </View>
             <StatusBar style="auto" />
+            
         </View>
+       
     );
 }
 

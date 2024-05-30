@@ -4,7 +4,7 @@ import { Link } from 'expo-router';
 import './assets/App.css';
 
 
-export default function mainpage() {
+export default function Mainpage() {
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>

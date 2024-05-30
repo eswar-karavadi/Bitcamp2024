@@ -3,13 +3,37 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import { Link } from 'expo-router';
 import './assets/App.css';
+import { FIREBASE_AUTH } from '../../Firebase/firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 
 
 export default function Login() {
     const [email, setEmail] = useState('');
-    const [pwd, setPwd] = useState('');
-    const auth = app;
+    const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+    const auth = FIREBASE_AUTH;
+
+    const handleSignIn = async () => {
+        setLoading(true);
+        try{
+            const response = await signInWithEmailAndPassword(auth, email, password);
+            console.log(response);
+            alert('Sign in successful!');
+            navigate('/Mainpage');
+        } catch (error) {
+            console.log(error);
+            alert('Sign in failed: ' + error.message);
+        } finally{
+            setLoading(false);
+        }
+
+        
+    };
+
+
 	return (
         <View style={styles.container}>
             <Text style={styles.header}>Login</Text>
@@ -26,14 +50,17 @@ export default function Login() {
 
                 <View style={styles.rowPasswordContainer}>
                     <Text style={styles.nameText}>Password: </Text>
-                    <TextInput 
+                    <TextInput  
+                        secureTextEntry = {true}
+                        value= {password}
                         style={styles.input} 
                         placeholder='e.g. eppley123!'
-                        onChangeText={(val) => setPwd(val)}
+                        onChangeText={(val) => setPassword(val)}
                     />
                 </View>
             </View>
-            <Link style={styles.loginStyle} href="/pages/mainpage">Login</Link> 
+            {/* <Link style={styles.loginStyle} onPress ={handleSignIn} href="/pages/mainpage">Login</Link>  */}
+            <Button title="Login" onPress={handleSignIn} />
             <StatusBar style="auto" />
         </View>
 	);
