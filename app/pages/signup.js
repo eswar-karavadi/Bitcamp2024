@@ -4,9 +4,10 @@ import React, { useState } from 'react';
 import './assets/App.css';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import { Link } from 'expo-router';
-
+import { useRouter } from 'expo-router';
 import { FIREBASE_AUTH } from '../../Firebase/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { TouchableOpacity } from 'react-native';
 
 
 
@@ -26,6 +27,7 @@ export default function SignUp() {
             const response = await createUserWithEmailAndPassword(auth, email, password);
             console.log(response);
             alert('Sign up successful!');
+            router.push("/pages/mainpage")
         } catch (error) {
             console.log(error);
             alert('Sign in failed: ' + error.message);
@@ -90,7 +92,7 @@ export default function SignUp() {
 
             <TouchableOpacity
                 style={styles.buttons}
-                onPress={() => router.push("/pages/mainpage")}
+                onPress={handleSignUp}
             >
                 <Text style={styles.buttonText}>Register</Text>
             </TouchableOpacity>

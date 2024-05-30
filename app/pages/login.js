@@ -13,7 +13,7 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const auth = FIREBASE_AUTH;
     const router = useRouter();
 
@@ -66,7 +66,7 @@ export default function Login() {
             </View>
             
             {/* <Link style={styles.loginStyle} onPress ={handleSignIn} href="/pages/mainpage">Login</Link> 
-            <Button title="Login" onPress={handleSignIn} /> <--- eswar firebase branch changes */} /
+            <Button title="Login" onPress={handleSignIn} /> <--- eswar firebase branch changes */} 
             
             
             <TouchableOpacity
