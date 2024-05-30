@@ -5,11 +5,13 @@ import { Link, useRouter } from 'expo-router';
 import './assets/App.css';
 
 
+
 export default function Login() {
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
     const router = useRouter();
 
+    const auth = app;
 	return (
         <View style={styles.container}>
             <Text style={styles.header}>Login</Text>

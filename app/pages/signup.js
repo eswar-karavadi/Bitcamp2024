@@ -1,15 +1,40 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Button, TextInput, TouchableOpacity } from 'react-native';
-import { Link, useRouter } from 'expo-router';
+
 import './assets/App.css';
+import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
+import { Link } from 'expo-router';
+
+import { FIREBASE_AUTH } from '../../Firebase/firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+
+
 
 export default function SignUp() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [pwd, setPwd] = useState('');
-    const [confirmPwd, setConfirmPwd] = useState('');
+   
     const router = useRouter();
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [loading, setLoading] = useState(false);
+    const auth = FIREBASE_AUTH;
+    
+    const handleSignUp = async () => {
+        setLoading(true);
+        try{
+            const response = await createUserWithEmailAndPassword(auth, email, password);
+            console.log(response);
+            alert('Sign up successful!');
+        } catch (error) {
+            console.log(error);
+            alert('Sign in failed: ' + error.message);
+        } finally{
+            setLoading(false);
+        }
+
+        
+    };
 
 	return (
        <View style={styles.container}>
@@ -20,6 +45,7 @@ export default function SignUp() {
                 <View style={styles.rowNameContainer}>
                     <Text style={styles.nameText}>Name: </Text>
                     <TextInput 
+                        value = {name}
                         style={styles.input} 
                         placeholder='e.g. Samik Wangneo'
                         onChangeText={(val) => setName(val)}
@@ -29,6 +55,7 @@ export default function SignUp() {
                 <View style={styles.rowEmailContainer}>
                     <Text style={styles.nameText}>Email: </Text>
                     <TextInput 
+                        value= {email}
                         style={styles.input} 
                         placeholder='e.g. rivincity@gmail.com'
                         onChangeText={(val) => setEmail(val)}
@@ -37,19 +64,22 @@ export default function SignUp() {
 
                 <View style={styles.rowPasswordContainer}>
                     <Text style={styles.nameText}>Password: </Text>
-                    <TextInput 
+                    <TextInput  
+                        secureTextEntry = {true}
+                        value= {password}
                         style={styles.input} 
                         placeholder='e.g. eppley123!'
-                        onChangeText={(val) => setPwd(val)}
+                        onChangeText={(val) => setPassword(val)}
                     />
                 </View>
 
                 <View style={styles.rowConfirmPasswordContainer}>
                     <Text style={styles.nameText}>Confirm Password: </Text>
                     <TextInput 
+                        value = {confirmPassword}
                         style={styles.input} 
                         placeholder='e.g. ********'
-                        onChangeText={(val) => setConfirmPwd(val)}
+                        onChangeText={(val) => setConfirmPassword(val)}
                     />
                 </View>
             </View>

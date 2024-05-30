@@ -1,10 +1,8 @@
 // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
 
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -14,6 +12,7 @@ import 'firebase/compat/firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyCsK1KPr1ErUPgytXekTo-g_C6XQfvKD00",
   authDomain: "bitcamp2024.firebaseapp.com",
+  databaseURL: "https://bitcamp2024-default-rtdb.firebaseio.com",
   projectId: "bitcamp2024",
   storageBucket: "bitcamp2024.appspot.com",
   messagingSenderId: "30634191907",
@@ -21,11 +20,6 @@ const firebaseConfig = {
   measurementId: "G-22K3LGH94Q"
 };
 
-if(!firebase.apps.length){
-    firebase.initializeApp(firebaseConfig);
-}
 // Initialize Firebase
-//const app = initializeApp(firebaseConfig);
-//const analytics = getAnalytics(app);
-
-export{firebase}
+export const app = initializeApp(firebaseConfig);
+export const FIREBASE_AUTH = getAuth(app);
