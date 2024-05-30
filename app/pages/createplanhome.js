@@ -1,12 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Button, TextInput } from "react-native";
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, Image, Button, TextInput, TouchableOpacity } from "react-native";
+import { Link, useRouter } from 'expo-router';
 import './assets/App.css';
 
 
 export default function createplanhome() {
     const [name, setName] = useState('');
+
+    const router = useRouter();
+
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
@@ -17,11 +20,16 @@ export default function createplanhome() {
                             placeholder='e.g. Push Pull Legs'
                             onChangeText={(val) => setName(val)}
                         />
-                <Link href="/pages/viewmonday" style = {styles.buttons}>Monday</Link>
-                <Link href="/pages/viewtuesday" style = {styles.buttons}>Tuesday</Link>
-                <Link href="/pages/viewwednesday" style = {styles.buttons}>Wednesday</Link>
-                <Link href="/pages/viewthursday" style = {styles.buttons}>Thursday</Link>
-                <Link href="/pages/viewfriday" style = {styles.buttons}>Friday</Link>
+
+                {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day) => (
+                    <TouchableOpacity
+                        key={day}
+                        style={styles.buttons}
+                        onPress={() => router.push({ pathname: '/pages/viewday', params: { day } })}
+                    >
+                        <Text style={styles.buttons}>{day}</Text>
+                    </TouchableOpacity>
+                ))}
 
                 <View style={styles.rowContainer}>
 
@@ -75,9 +83,9 @@ const styles = StyleSheet.create({
     },
     buttons: {
         alignItems: 'center',
-        top: '5%',
+        top: '8%',
         fontSize: 36,
-        padding: 40
+        padding: 20
     },
     navbar: {
       width: 150,
