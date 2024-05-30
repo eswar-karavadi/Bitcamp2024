@@ -1,15 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button } from "react-native";
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity} from "react-native";
+import { Link, useRouter} from 'expo-router';
 import './assets/App.css';
 
 
 export default function Mainpage() {
+    const router = useRouter();
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
                 <Image source={require('./assets/logo.png')} style={styles.image} />
-                <Link href="/pages/workoutplan" style = {styles.buttons}>See Workout Plan</Link>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/workoutplan")}
+                >
+                    <Text style={styles.buttonText}>See Workout Plan</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/workoutbuddy")}
+                >
+                    <Text style={styles.buttonText}>Find Workout Buddy</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/login")}
+                >
+                    <Text style={styles.buttonText}>Machine Availability</Text>
+                </TouchableOpacity>
+
                 <Link href="/pages/workoutbuddy" style = {styles.buttons}>Find Workout Buddy</Link>
                 <Link href="/pages/login" style = {styles.buttons}>Machine Availability</Link>
                 <View style={styles.rowContainer}>
