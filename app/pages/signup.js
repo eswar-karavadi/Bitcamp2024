@@ -1,5 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
+
+import './assets/App.css';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import { Link } from 'expo-router';
 
@@ -11,6 +13,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 export default function SignUp() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+   
+    const router = useRouter();
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [loading, setLoading] = useState(false);
@@ -80,8 +84,17 @@ export default function SignUp() {
                 </View>
             </View>
 
-            {/* <Link style={styles.registerStyle} onPress={handleSignUp} href="/pages/mainpage">Register</Link> */}
-            <Button title="Login" onPress={handleSignUp} />
+            {/* <Link style={styles.registerStyle} onPress={handleSignUp} href="/pages/mainpage">Register</Link>
+            <Button title="Login" onPress={handleSignUp}  <--- eswar firebase old cahnges/> */}
+
+
+            <TouchableOpacity
+                style={styles.buttons}
+                onPress={() => router.push("/pages/mainpage")}
+            >
+                <Text style={styles.buttonText}>Register</Text>
+            </TouchableOpacity>
+
          
             <StatusBar style="auto" />
         </View>
@@ -150,5 +163,18 @@ const styles = StyleSheet.create({
         fontSize: 18,
         alignItems: 'center',
         top: '20%',
+    },
+    buttons: {
+        alignItems: 'center',
+        top: '20%',
+        backgroundColor: '#D90429',
+        padding: 10,
+        borderRadius: 30,
+        marginVertical: 10,
+        borderWidth: 3,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 36,
     }
 });

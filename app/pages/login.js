@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, Image, Button, TextInput, TouchableOpacity } from 'react-native';
+import { Link, useRouter } from 'expo-router';
 import './assets/App.css';
 import { FIREBASE_AUTH } from '../../Firebase/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
@@ -15,6 +15,7 @@ export default function Login() {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const auth = FIREBASE_AUTH;
+    const router = useRouter();
 
     const handleSignIn = async () => {
         setLoading(true);
@@ -34,6 +35,10 @@ export default function Login() {
     };
 
 
+    
+    
+
+    
 	return (
         <View style={styles.container}>
             <Text style={styles.header}>Login</Text>
@@ -59,8 +64,17 @@ export default function Login() {
                     />
                 </View>
             </View>
-            {/* <Link style={styles.loginStyle} onPress ={handleSignIn} href="/pages/mainpage">Login</Link>  */}
-            <Button title="Login" onPress={handleSignIn} />
+            
+            {/* <Link style={styles.loginStyle} onPress ={handleSignIn} href="/pages/mainpage">Login</Link> 
+            <Button title="Login" onPress={handleSignIn} /> <--- eswar firebase branch changes */} /
+            
+            
+            <TouchableOpacity
+                style={styles.buttons}
+                onPress={() => router.push("/pages/mainpage")}
+            >
+                <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
             <StatusBar style="auto" />
         </View>
 	);
@@ -118,5 +132,18 @@ const styles = StyleSheet.create({
         fontSize: 18,
         alignItems: 'center',
         top: '20%',
+    },
+    buttons: {
+        alignItems: 'center',
+        top: '10%',
+        backgroundColor: '#D90429',
+        padding: 10,
+        borderRadius: 30,
+        marginVertical: 10,
+        borderWidth: 3,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 36,
     }
 });

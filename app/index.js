@@ -22,25 +22,44 @@
 
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from "react-native";
-import { Link } from 'expo-router';
-import { useNavigation } from '@react-navigation/native';
+// import { Link } from 'expo-router';
+// import { useNavigation } from '@react-navigation/native';
 
 
 
+
+// export default function Home() {
+//     const navigation = useNavigation();
+
+//     return ( /* not working*/
+
+import { Link, useRouter } from 'expo-router';
 
 export default function Home() {
-    const navigation = useNavigation();
+    const router = useRouter();
 
-    return ( /* not working*/
-
+    return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
-                <Text style={styles.nameText}>Name</Text>
+
+                <Text style={styles.nameText}>TerpFit</Text>
                 <Image source={require('./assets/logo.png')} style={styles.image} />
-                <TouchableOpacity onPress={() => navigation.navigate('SignUp')} style={styles.buttons}>
+                 {/* <TouchableOpacity onPress={() => navigation.navigate('SignUp')} style={styles.buttons}>
+                     <Text style={styles.buttonText}>Sign Up</Text>
+                 </TouchableOpacity>
+                 <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.buttons}> */}
+
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/signup")}
+                >
                     <Text style={styles.buttonText}>Sign Up</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.buttons}>
+
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/login")}
+                >
                     <Text style={styles.buttonText}>Log In</Text>
                 </TouchableOpacity>
            
@@ -68,18 +87,25 @@ const styles = StyleSheet.create({
     nameText: {
         fontSize: 36,
         alignItems: 'center',
-        top: '40%',
+        top: '30%',
     },
     image: {
         width: 150,
         height: 140,
         alignItems: 'center',
-        top: '70%',
+        top: '60%',
     },
     buttons: {
         alignItems: 'center',
-        top: '100%',
+        top: '90%',
+        backgroundColor: '#D90429',
+        padding: 10,
+        borderRadius: 30,
+        marginVertical: 10,
+        borderWidth: 3,
+    },
+    buttonText: {
+        color: 'white',
         fontSize: 36,
-        padding: 10
     }
 });
