@@ -2,33 +2,36 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button, TextInput } from "react-native";
 import { Link } from 'expo-router';
 import './assets/App.css';
+import { useLocalSearchParams } from 'expo-router';
 
 
-export default function viewfriday() {
-    return (
+export default function viewday() {
+    const selectedDay = useLocalSearchParams();
+    const displayDay = selectedDay["day"];
+   return(
         <View style={styles.container}>
             <Image source={require('./assets/logo.png')} style={styles.image} />
             <View style={styles.columnContainer}>
-                <Text style = {styles.nameText}>Friday</Text>
+               <Text style={styles.nameText}>{displayDay}</Text>
 
-                <Text style = {styles.nameText}>Muscles Trained</Text>
+                <Text style={styles.nameText}>Muscles Trained</Text>
                 <TextInput
-                    style={styles.input} 
+                    style={styles.input}
                     placeholder='e.g. Biceps, Chest'
                 />
 
-                <Text style = {styles.nameText}>Potential Exercises</Text>
+                <Text style={styles.nameText}>Potential Exercises</Text>
                 <TextInput
-                    style={styles.input} 
+                    style={styles.input}
                     placeholder='e.g. Bicep Curls, Rear Delt Flys'
                 />
-                
-           
+
+
             </View>
             <View style={styles.rowContainer}>
 
                 <Link href="/pages/signup" style={styles.navbar} >
-                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
+                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar} />
                 </Link>
 
                 <Link href="/pages/mainpage" style={styles.navbar}>
@@ -39,10 +42,10 @@ export default function viewfriday() {
                     <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
                 </Link>
 
-                  
-                  
 
-                </View>
+
+
+            </View>
             <StatusBar style="auto" />
         </View>
     );
@@ -66,11 +69,11 @@ const styles = StyleSheet.create({
         padding: 40
     },
     image: {
-      width: 50,
-      height: 48,
-      position: 'absolute',
-      top: '2.5%',
-      left: '82.5%',
+        width: 50,
+        height: 48,
+        position: 'absolute',
+        top: '2.5%',
+        left: '82.5%',
     },
     input: {
         borderWidth: 1,
@@ -86,23 +89,23 @@ const styles = StyleSheet.create({
         padding: 40
     },
     navbar: {
-      width: 150,
-      height: 90,
-      alignItems: 'center',
-      bottom: '24%',
+        width: 150,
+        height: 90,
+        alignItems: 'center',
+        bottom: '24%',
     },
 
-  rowContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    top: '81%',
-  },
+    rowContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        top: '81%',
+    },
 
-  homeLogo: {
-    width: 0,
-    height: 0,
-    top: '0%',
-    margin: 70,
-  }
+    homeLogo: {
+        width: 0,
+        height: 0,
+        top: '0%',
+        margin: 70,
+    }
 
 });

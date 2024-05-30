@@ -23,7 +23,7 @@ export default function workoutbuddy() {
                   </Link>
 
                   <Link href="/pages/mainpage" style={styles.navbar}>
-                  <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
+                  <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
                   </Link>
 
                   <Link href="/pages/profile" style={styles.navbar}>
@@ -76,23 +76,21 @@ const styles = StyleSheet.create({
       margin: 10
     },
     navbar: {
+      flex: 1,
       width: 150,
       height: 90,
       alignItems: 'center',
-      top: '30%',
+        top: '30%',
+      margin: 20,
     },
 
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    top: '50%',
+      top: '67%',
+      right: '9.5%',
+
   },
 
-  homeLogo: {
-    width: 0,
-    height: 0,
-    top: '0%',
-    margin: 70,
-  }
 
 });

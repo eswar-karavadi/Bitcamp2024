@@ -1,6 +1,7 @@
 import { Stack } from 'expo-router';
 
 export default function RootLayout() {
+
     return (
         <Stack>
             <Stack.Screen 
@@ -58,45 +59,9 @@ export default function RootLayout() {
             }}
             />
             <Stack.Screen
-            name='pages/viewmonday'
+            name='pages/viewday'
             options={{
-                headerTitle: "Monday",
-                headerStyle:  {
-                    backgroundColor: '#D90429',
-                }
-            }}
-            />
-            <Stack.Screen
-            name='pages/viewtuesday'
-            options={{
-                headerTitle: "Tuesday",
-                headerStyle:  {
-                    backgroundColor: '#D90429',
-                }
-            }}
-            />
-            <Stack.Screen
-            name='pages/viewwednesday'
-            options={{
-                headerTitle: "Wednesday",
-                headerStyle:  {
-                    backgroundColor: '#D90429',
-                }
-            }}
-            />
-            <Stack.Screen
-            name='pages/viewthursday'
-            options={{
-                headerTitle: "Thursday",
-                headerStyle:  {
-                    backgroundColor: '#D90429',
-                }
-            }}
-            />
-            <Stack.Screen
-            name='pages/viewfriday'
-            options={{
-                headerTitle: "Friday",
+                headerTitle: "Day Plan",
                 headerStyle:  {
                     backgroundColor: '#D90429',
                 }
@@ -174,6 +139,6 @@ export default function RootLayout() {
                 }
             }}
             />
-        </Stack>
+                </Stack>
     );
 };

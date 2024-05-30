@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, Image, Button, TextInput, TouchableOpacity } from 'react-native';
+import { Link, useRouter } from 'expo-router';
 import './assets/App.css';
 
 
@@ -9,6 +9,8 @@ import './assets/App.css';
 export default function Login() {
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
+    const router = useRouter();
+
     const auth = app;
 	return (
         <View style={styles.container}>
@@ -33,7 +35,12 @@ export default function Login() {
                     />
                 </View>
             </View>
-            <Link style={styles.loginStyle} href="/pages/mainpage">Login</Link> 
+            <TouchableOpacity
+                style={styles.buttons}
+                onPress={() => router.push("/pages/mainpage")}
+            >
+                <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
             <StatusBar style="auto" />
         </View>
 	);
@@ -91,5 +98,18 @@ const styles = StyleSheet.create({
         fontSize: 18,
         alignItems: 'center',
         top: '20%',
+    },
+    buttons: {
+        alignItems: 'center',
+        top: '10%',
+        backgroundColor: '#D90429',
+        padding: 10,
+        borderRadius: 30,
+        marginVertical: 10,
+        borderWidth: 3,
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 36,
     }
 });
