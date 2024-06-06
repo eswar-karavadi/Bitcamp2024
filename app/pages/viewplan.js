@@ -33,7 +33,7 @@ export default function viewplan() {
 
                 <View style={styles.rowContainer}>
 
-                <Link href="/pages/signup" style={styles.navbar} >
+                <Link href="/pages/settings" style={styles.navbar} >
                   <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
                 </Link>
 

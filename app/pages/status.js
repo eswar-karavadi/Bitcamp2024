@@ -9,17 +9,17 @@ export default function status() {
         <View style={styles.container}>
             <View style={styles.columnContainer}>
                 <Text style = {styles.nameText}>Breakdown of Status</Text>
-                <Text style = {styles.nameText}>0 - 99 -> Rookie</Text>
-                <Text style = {styles.nameText}>100 - 199 ->Amateur</Text>
-                <Text style = {styles.nameText}>200 - 299 ->Regular</Text>
-                <Text style = {styles.nameText}>300 - 399 ->Pro</Text>
-                <Text style = {styles.nameText}>400 - 499 ->Expert</Text>
+                <Text style = {styles.nameText}>0 - 99 - Rookie</Text>
+                <Text style = {styles.nameText}>100 - 199 - Amateur</Text>
+                <Text style = {styles.nameText}>200 - 299 - Regular</Text>
+                <Text style = {styles.nameText}>300 - 399 - Pro</Text>
+                <Text style = {styles.nameText}>400 - 499 - Expert</Text>
                 
            
             </View>
                             <View style={styles.rowContainer}>
 
-                <Link href="/pages/signup" style={styles.navbar} >
+                <Link href="/pages/settings" style={styles.navbar} >
                     <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
                 </Link>
 
