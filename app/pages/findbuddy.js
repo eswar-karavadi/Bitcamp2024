@@ -9,7 +9,7 @@ export default function findbuddy() {
     const [pwd, setPwd] = useState('');
 	return (
         <View style={styles.container}>
-            <Image source={require('./assets/logo.png')} style={styles.image} />
+            <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
             <View style = {styles.columnContainer}>
                 <View style={styles.rowEmailContainer}>
                     <Text style={styles.nameText}>1. What time are you looking to workout today?: </Text>

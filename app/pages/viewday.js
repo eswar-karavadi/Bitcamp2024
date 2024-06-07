@@ -11,7 +11,7 @@ export default function viewday() {
     const router = useRouter();
    return(
         <View style={styles.container}>
-            <Image source={require('./assets/logo.png')} style={styles.image} />
+            <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
             <View style={styles.columnContainer}>
                 <Text style={styles.nameText}>{displayDay}</Text>
                 <View style={styles.rowContainer2}>
@@ -20,7 +20,7 @@ export default function viewday() {
                         style={styles.buttons}
                         onPress={() => router.push("/pages/createplanhome")}
                     >
-                        <Image source={require('./assets/logo.png')} style={styles.infoImage} />
+                        <Image source={require('../assets/terpfitLogo.png')} style={styles.infoImage} />
                     </TouchableOpacity>
                 </View>
                 <TextInput
@@ -34,7 +34,7 @@ export default function viewday() {
                         style={styles.buttons}
                         onPress={() => router.push("/pages/createplanhome")}
                     >
-                        <Image source={require('./assets/logo.png')} style={styles.infoImage} />
+                        <Image source={require('../assets/terpfitLogo.png')} style={styles.infoImage} />
                     </TouchableOpacity>
                 </View>
                 <TextInput

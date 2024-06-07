@@ -8,9 +8,9 @@ export default function viewbuddy() {
     return (
         <View style={styles.container}>
             <View style={styles.columnContainerMain}>
-                <Image source={require('./assets/logo.png')} style={styles.image} />
+                <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
                 <View style={styles.rowContainer1}>
-                    <Image source={require('./assets/logo.png')} style={styles.avatar}/>
+                    <Image source={require('../assets/terpfitLogo.png')} style={styles.avatar}/>
                     <Link href="/pages/workoutplan" style = {styles.buttons}>Name</Link>
                 </View>
                 <View style={styles.rowContainer2}>

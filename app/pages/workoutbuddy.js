@@ -10,7 +10,7 @@ export default function workoutbuddy() {
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
-                <Image source={require('./assets/logo.png')} style={styles.image} />
+                <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
                 <Link href="/pages/findbuddy" style = {styles.buttons}>Find Buddy</Link>
                 <Link href="/pages/viewbuddy" style = {styles.buttons}>View Buddies</Link>
                 <Text style = {styles.streak}>Total Buddies: </Text>

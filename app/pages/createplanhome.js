@@ -13,7 +13,7 @@ export default function createplanhome() {
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
-                <Image source={require('./assets/logo.png')} style={styles.image} />
+                <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
                 <Text style = {styles.nameText}>Plan Name:</Text>
                     <TextInput 
                             style={styles.input} 

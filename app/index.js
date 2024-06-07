@@ -42,8 +42,9 @@ export default function Home() {
         <View style={styles.container}>
             <View style={styles.columnContainer}>
 
-                <Text style={styles.nameText}>TerpFit</Text>
-                <Image source={require('./assets/logo.png')} style={styles.image} />
+                <Text style={styles.nameText}>Welcome to TerpFit!</Text>
+                <Text style={styles.subheadingText}>Please sign up or login to access your account!</Text>
+                <Image source={require('./assets/terpfitLogo.png')} style={styles.image} />
                  {/* <TouchableOpacity onPress={() => navigation.navigate('SignUp')} style={styles.buttons}>
                      <Text style={styles.buttonText}>Sign Up</Text>
                  </TouchableOpacity>
@@ -88,6 +89,12 @@ const styles = StyleSheet.create({
         fontSize: 36,
         alignItems: 'center',
         top: '30%',
+    },
+    subheadingText: {
+        fontSize: 24,
+        alignItems: 'center',
+        textAlign: 'center',
+        top: '50%',
     },
     image: {
         width: 150,

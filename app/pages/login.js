@@ -43,7 +43,7 @@ export default function Login() {
         <View style={styles.container}>
             <Text style={styles.header}>Login</Text>
             <Text style = {styles.text}>Please sign in to continue: </Text>
-            <Image source={require('./assets/logo.png')} style={styles.image} />
+            <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
             <View style = {styles.columnContainer}>
                 <View style={styles.rowEmailContainer}>
                     <Text style={styles.nameText}>Email: </Text>

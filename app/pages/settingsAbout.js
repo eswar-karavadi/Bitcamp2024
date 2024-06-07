@@ -9,7 +9,7 @@ export default function settingsAbout() {
     return (
         <View style={styles.container}>
             <View style={styles.columnContainer}>
-                <Image source={require('./assets/logo.png')} style={styles.image} />
+                <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
                 <TouchableOpacity
                     style={styles.buttons}
                     onPress={() => router.push("/pages/workoutplan")}

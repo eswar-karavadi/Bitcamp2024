@@ -7,8 +7,8 @@ import './assets/App.css';
 export default function profile() {
     return (
         <View style={styles.container}>
-            <Image source={require('./assets/logo.png')} style={styles.image} />
-            <Image source={require('./assets/logo.png')} style={styles.avatar} />
+            <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
+            <Image source={require('../assets/terpfitLogo.png')} style={styles.avatar} />
 
             <View style={styles.columnContainer}>
                 <Text style = {styles.nameText}>Name: </Text>

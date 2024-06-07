@@ -42,7 +42,7 @@ export default function SignUp() {
        <View style={styles.container}>
             <Text style={styles.header}>Sign Up</Text>
             <Text style={styles.text}>Please sign up to use the app </Text>
-            <Image source={require('./assets/logo.png')} style={styles.image} />
+            <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
             <View style={styles.columnContainer}>
 
                 <View style={styles.rowNameContainer}>
