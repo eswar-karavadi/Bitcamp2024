@@ -20,7 +20,7 @@ export default function createplanhome() {
                             placeholder='e.g. Push Pull Legs'
                             onChangeText={(val) => setName(val)}
                         />
-
+                <Text style = {styles.subheading}>Select a day and input your workout for that day.</Text>
                 {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day) => (
                     <TouchableOpacity
                         key={day}
@@ -38,7 +38,7 @@ export default function createplanhome() {
                 </Link>
 
                 <Link href="/pages/mainpage" style={styles.navbar}>
-                    <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
+                    <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
                 </Link>
 
                 <Link href="/pages/profile" style={styles.navbar}>
@@ -74,6 +74,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         top: '2%',
     },
+    subheading: {
+        fontSize: 20,
+        alignItems: 'center',
+        top: '10%',
+    },
     image: {
       width: 65,
       height: 60,
@@ -91,7 +96,7 @@ const styles = StyleSheet.create({
       width: 150,
       height: 90,
       alignItems: 'center',
-      bottom: '24%',
+      bottom: '28%',
     },
 
   rowContainer: {

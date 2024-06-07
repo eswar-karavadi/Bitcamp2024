@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, TextInput } from "react-native";
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, Image, Button, TextInput, TouchableOpacity } from "react-native";
+import { Link, useRouter } from 'expo-router';
 import './assets/App.css';
 import { useLocalSearchParams } from 'expo-router';
 
@@ -8,19 +8,35 @@ import { useLocalSearchParams } from 'expo-router';
 export default function viewday() {
     const selectedDay = useLocalSearchParams();
     const displayDay = selectedDay["day"];
+    const router = useRouter();
    return(
         <View style={styles.container}>
             <Image source={require('./assets/logo.png')} style={styles.image} />
             <View style={styles.columnContainer}>
-               <Text style={styles.nameText}>{displayDay}</Text>
-
-                <Text style={styles.nameText}>Muscles Trained</Text>
+                <Text style={styles.nameText}>{displayDay}</Text>
+                <View style={styles.rowContainer2}>
+                    <Text style={styles.nameText}>Muscles Trained</Text>
+                    <TouchableOpacity
+                        style={styles.buttons}
+                        onPress={() => router.push("/pages/createplanhome")}
+                    >
+                        <Image source={require('./assets/logo.png')} style={styles.infoImage} />
+                    </TouchableOpacity>
+                </View>
                 <TextInput
                     style={styles.input}
                     placeholder='e.g. Biceps, Chest'
                 />
 
-                <Text style={styles.nameText}>Potential Exercises</Text>
+                <View style={styles.rowContainer2}>
+                    <Text style={styles.nameText}>Potential Exercises</Text>
+                    <TouchableOpacity
+                        style={styles.buttons}
+                        onPress={() => router.push("/pages/createplanhome")}
+                    >
+                        <Image source={require('./assets/logo.png')} style={styles.infoImage} />
+                    </TouchableOpacity>
+                </View>
                 <TextInput
                     style={styles.input}
                     placeholder='e.g. Bicep Curls, Rear Delt Flys'
@@ -35,7 +51,7 @@ export default function viewday() {
                 </Link>
 
                 <Link href="/pages/mainpage" style={styles.navbar}>
-                    <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
+                    <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
                 </Link>
 
                 <Link href="/pages/profile" style={styles.navbar}>
@@ -75,6 +91,13 @@ const styles = StyleSheet.create({
         top: '2.5%',
         left: '78.5%',
     },
+    infoImage: {
+        width: 30,
+        height: 30,
+        position: 'absolute',
+        top: '40%',
+        left: '50%',
+    },
     input: {
         borderWidth: 1,
         borderColor: '#777',
@@ -100,7 +123,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         top: '81%',
     },
-
+    rowContainer2: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
     homeLogo: {
         width: 0,
         height: 0,
