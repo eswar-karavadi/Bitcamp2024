@@ -54,19 +54,20 @@ const styles = StyleSheet.create({
     nameText: {
         fontSize: 36,
         alignItems: 'center',
-        top: '40%',
+        top: '30%',
+        fontWeight: 'bold',
     },
-        image: {
-      width: 50,
-      height: 48,
+    image: {
+      width: 65,
+      height: 60,
       position: 'absolute',
       top: '2.5%',
-      left: '82.5%',
+      left: '78.5%',
     },
 
     buttons: {
         alignItems: 'center',
-        top: '50%',
+        top: '40%',
         fontSize: 36,
         padding: 10,
     },

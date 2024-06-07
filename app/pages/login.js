@@ -42,6 +42,7 @@ export default function Login() {
 	return (
         <View style={styles.container}>
             <Text style={styles.header}>Login</Text>
+            <Text style = {styles.text}>Please sign in to continue: </Text>
             <Image source={require('./assets/logo.png')} style={styles.image} />
             <View style = {styles.columnContainer}>
                 <View style={styles.rowEmailContainer}>
@@ -94,23 +95,33 @@ const styles = StyleSheet.create({
         left: '5%'
     },
     header: {
-        fontSize: 24,
+        fontSize: 45,
+        fontWeight: 'bold',
         alignItems: 'center',
         position: 'absolute',
-        top: '15%',
+        top: '11%',
     },
+    text: {
+        fontSize: 20,
+        alighItems: 'center',
+        position: 'absolute',
+        top: '20%',
+
+    },
+
     nameText: {
         fontSize: 18,
         alignItems: 'center',
     },
     image: {
-        width: 50,
-        height: 48,
+        width: 65,
+        height: 60,
         position: 'absolute',
         top: '2.5%',
-        left: '82.5%',
+        left: '78.5%',
     },
     input: {
+
         borderWidth: 1,
         borderColor: '#777',
         position: 'absolute',
@@ -126,7 +137,7 @@ const styles = StyleSheet.create({
     rowPasswordContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '40%',    
+        top: '70%',    
     },
     loginStyle: {
         fontSize: 18,
@@ -135,10 +146,10 @@ const styles = StyleSheet.create({
     },
     buttons: {
         alignItems: 'center',
-        top: '10%',
+        top: '30%',
         backgroundColor: '#D90429',
-        padding: 10,
-        borderRadius: 30,
+        padding: 15,
+        borderRadius: 25,
         marginVertical: 10,
         borderWidth: 3,
     },

@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
         padding: 40
     },
     image: {
-        width: 50,
-        height: 48,
+        width: 65,
+        height: 60,
         position: 'absolute',
         top: '2.5%',
-        left: '82.5%',
+        left: '78.5%',
     },
     input: {
         borderWidth: 1,

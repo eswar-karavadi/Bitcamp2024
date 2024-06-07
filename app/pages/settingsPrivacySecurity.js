@@ -1,26 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button } from "react-native";
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity} from "react-native";
+import { Link, useRouter} from 'expo-router';
 import './assets/App.css';
 
 
-export default function potentialbuddies() {
+export default function settingsPrivacySecurity() {
+    const router = useRouter();
     return (
         <View style={styles.container}>
-            <View style={styles.columnContainerMain}>
+            <View style={styles.columnContainer}>
                 <Image source={require('./assets/logo.png')} style={styles.image} />
-                <View style={styles.rowContainer1}>
-                    <Image source={require('./assets/logo.png')} style={styles.avatar}/>
-                    <Link href="/pages/workoutplan" style = {styles.buttons}>Name</Link>
-                </View>
-                <View style={styles.rowContainer2}>
-                    <Image source={require('./assets/logo.png')} style={styles.avatar}/>
-                    <Link href="/pages/login" style = {styles.buttons}>Name</Link>
-                </View>
-                <View style={styles.rowContainer3}>
-                    <Image source={require('./assets/logo.png')} style={styles.avatar}/>
-                    <Link href="/pages/login" style = {styles.buttons}>Name</Link>
-                </View>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/workoutplan")}
+                >
+                    <Text style={styles.buttonText}>See Workout Plan</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/workoutbuddy")}
+                >
+                    <Text style={styles.buttonText}>Find Workout Buddy</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/login")}
+                >
+                    <Text style={styles.buttonText}>Machine Availability</Text>
+                </TouchableOpacity>
+
                 <View style={styles.rowContainer}>
 
                 <Link href="/pages/settings" style={styles.navbar} >
@@ -66,47 +76,39 @@ const styles = StyleSheet.create({
         top: '40%',
     },
     image: {
-      width: 65,
-      height: 60,
+      width: 50,
+      height: 48,
       position: 'absolute',
       top: '2.5%',
-      left: '78.5%',
-    },
-    buttons: {
-        alignItems: 'center',
-        top: '20%',
-        fontSize: 36,
-        padding: 40
+      left: '82.5%',
     },
     navbar: {
-        flex: 1,
-        right: '10%',
-        width: 150,
-        height: 90,
-        alignItems: 'center',
-        top: '27%',
+      flex: 1,
+      right: '10%',
+      width: 150,
+      height: 90,
+      alignItems: 'center',
+      top: '20%',
     },
 
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     top: '50%',
-  },
-  rowContainer1: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      top: '0%',
-  },
-  rowContainer2: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      top: '20%',
-  },
-  rowContainer3: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      top: '40%',
-  },
+  }, 
 
+  buttons: {
+    alignItems: 'center',
+    top: '25%',
+    backgroundColor: '#D90429',
+    padding: 10,
+    borderRadius: 30,
+    marginVertical: 35,
+    borderWidth: 3,
+},
+buttonText: {
+    color: 'white',
+    fontSize: 36,
+}
 
 });

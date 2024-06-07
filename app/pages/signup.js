@@ -41,6 +41,7 @@ export default function SignUp() {
 	return (
        <View style={styles.container}>
             <Text style={styles.header}>Sign Up</Text>
+            <Text style={styles.text}>Please sign up to use the app </Text>
             <Image source={require('./assets/logo.png')} style={styles.image} />
             <View style={styles.columnContainer}>
 
@@ -117,21 +118,31 @@ const styles = StyleSheet.create({
         left: '5%'
     },
     header: {
-        fontSize: 24,
+        fontSize: 45,
         alignItems: 'center',
         position: 'absolute',
-        top: '15%',
+        top: '14%',
+        fontWeight: 'bold',
     },
-    nameText: {
-        fontSize: 18,
+    text: {
+        fontSize: 20,
         alignItems: 'center',
+        position: 'absolute',
+        top: '22.5%',
+
+    },
+
+    nameText: {
+        fontSize: 17,
+        alignItems: 'center',
+        fontWeight: 'bold',
     },
     image: {
-        width: 50,
-        height: 48,
+        width: 65,
+        height: 60,
         position: 'absolute',
         top: '2.5%',
-        left: '82.5%',
+        left: '78.5%',
     },
     input: {
         borderWidth: 1,
@@ -144,22 +155,22 @@ const styles = StyleSheet.create({
     rowNameContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '0%',    
+        top: '5%',    
     },
     rowEmailContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '20%',
+        top: '25%',
     },
     rowPasswordContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '40%',    
+        top: '45%',    
     },
     rowConfirmPasswordContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '60%',    
+        top: '65%',    
     },
     registerStyle: {
         fontSize: 18,
@@ -168,9 +179,9 @@ const styles = StyleSheet.create({
     },
     buttons: {
         alignItems: 'center',
-        top: '20%',
+        top: '30%',
         backgroundColor: '#D90429',
-        padding: 10,
+        padding: 15,
         borderRadius: 30,
         marginVertical: 10,
         borderWidth: 3,
