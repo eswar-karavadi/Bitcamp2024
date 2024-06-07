@@ -10,6 +10,7 @@ export default function Mainpage() {
         <View style={styles.container}>
             <View style={styles.columnContainer}>
                 <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
+                <Text style = {styles.text}>Empower Your Day With TerpFit! </Text>
                 <TouchableOpacity
                     style={styles.buttons}
                     onPress={() => router.push("/pages/workoutplan")}
@@ -75,6 +76,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         top: '40%',
     },
+    text: {
+        fontSize: 24,
+        alignItems: 'center',
+        top: '20%',
+        fontWeight: 'bold',
+    },
 
     image: {
       width: 68,
@@ -89,7 +96,7 @@ const styles = StyleSheet.create({
       width: 150,
       height: 90,
       alignItems: 'center',
-      top: '20%',
+      top: '10%',
     },
 
   rowContainer: {

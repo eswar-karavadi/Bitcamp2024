@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         top: '11%',
     },
     text: {
-        fontSize: 20,
+        fontSize: 26,
         alighItems: 'center',
         position: 'absolute',
         top: '20%',
@@ -110,8 +110,9 @@ const styles = StyleSheet.create({
     },
 
     nameText: {
-        fontSize: 18,
+        fontSize: 25,
         alignItems: 'center',
+        fontWeight: 'bold',
     },
     image: {
         width: 65,
@@ -121,23 +122,22 @@ const styles = StyleSheet.create({
         left: '78.5%',
     },
     input: {
-
-        borderWidth: 1,
+        borderWidth: 1.5,
         borderColor: '#777',
         position: 'absolute',
-        padding: 8,
-        width: 200,
-        left: '100%'
+        padding: 20,
+        width: 170,
+        left: '150%',
     },
     rowEmailContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '20%',
+        top: '30%',
     },
     rowPasswordContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '70%',    
+        top: '115%',    
     },
     loginStyle: {
         fontSize: 18,

@@ -78,10 +78,11 @@ const styles = StyleSheet.create({
     },
 
     streak: {
-      fontSize: 36,
+      fontSize: 30,
       alignItems: 'center',
       top: '40%',
-      margin: 10
+      margin: 10,
+      fontWeight: 'bold',
     },
     navbar: {
         flex: 1,

@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
         fontSize: 36,
         alignItems: 'center',
         top: '30%',
+        fontWeight: 'bold',
     },
     subheadingText: {
         fontSize: 24,
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
     },
     buttons: {
         alignItems: 'center',
-        top: '90%',
+        top: '77%',
         backgroundColor: '#D90429',
         padding: 10,
         borderRadius: 30,
