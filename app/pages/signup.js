@@ -121,19 +121,19 @@ const styles = StyleSheet.create({
         fontSize: 45,
         alignItems: 'center',
         position: 'absolute',
-        top: '14%',
+        top: '12%',
         fontWeight: 'bold',
     },
     text: {
         fontSize: 20,
         alignItems: 'center',
         position: 'absolute',
-        top: '22.5%',
+        top: '21%',
 
     },
 
     nameText: {
-        fontSize: 17,
+        fontSize: 20,
         alignItems: 'center',
         fontWeight: 'bold',
     },
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
         borderColor: '#777',
         position: 'absolute',
         padding: 8,
-        width: 200,
+        width: 170,
         left: '100%'
     },
     rowNameContainer: {
@@ -160,17 +160,17 @@ const styles = StyleSheet.create({
     rowEmailContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '25%',
+        top: '30%',
     },
     rowPasswordContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '45%',    
+        top: '55%',    
     },
     rowConfirmPasswordContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '65%',    
+        top: '80%',    
     },
     registerStyle: {
         fontSize: 18,

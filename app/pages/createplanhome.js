@@ -20,14 +20,14 @@ export default function createplanhome() {
                             placeholder='e.g. Push Pull Legs'
                             onChangeText={(val) => setName(val)}
                         />
-                <Text style = {styles.subheading}>Select a day and input your workout for that day.</Text>
+                <Text style = {styles.subheading}>Choose a day/input your workout for that day</Text>
                 {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day) => (
                     <TouchableOpacity
                         key={day}
                         style={styles.buttons}
                         onPress={() => router.push({ pathname: '/pages/viewday', params: { day } })}
                     >
-                        <Text style={styles.buttons}>{day}</Text>
+                        <Text style={styles.buttonText}>{day}</Text>
                     </TouchableOpacity>
                 ))}
 
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         top: '2%',
     },
     subheading: {
-        fontSize: 20,
+        fontSize: 19,
         alignItems: 'center',
         top: '10%',
     },
@@ -86,23 +86,32 @@ const styles = StyleSheet.create({
       top: '2.5%',
       left: '78.5%',
     },
-    buttons: {
-        alignItems: 'center',
-        top: '8%',
-        fontSize: 36,
-        padding: 20
-    },
-    navbar: {
+
+  buttons: {
+    alignItems: 'center',
+    top: '10%',
+    backgroundColor: '#D90429',
+    padding: 10,
+    borderRadius: 35,
+    marginVertical: 16,
+    borderWidth: 3,
+},
+buttonText: {
+    color: 'white',
+    fontSize: 36,
+},
+
+navbar: {
       width: 150,
       height: 90,
       alignItems: 'center',
-      bottom: '28%',
+      flex: 1,
     },
 
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    top: '40%',
+    top: '30%',
   },
 
   homeLogo: {
