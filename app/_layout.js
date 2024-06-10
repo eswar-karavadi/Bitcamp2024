@@ -139,6 +139,19 @@ export default function RootLayout() {
                 }
             }}
             />
-                </Stack>
+
+            <Stack.Screen
+                name='pages/settings'
+                options={{
+                    headerTitle: "Settings",
+                    headerStyle: {
+                        backgroundColor: '#D90429',
+                    }
+                }}
+            />
+
+        </Stack>
+
+
     );
 };
