@@ -8,6 +8,7 @@ import { useRouter } from 'expo-router';
 import { FIREBASE_AUTH } from '../../Firebase/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { TouchableOpacity } from 'react-native';
+import LogoImage from './logoImage';
 
 
 
@@ -40,9 +41,9 @@ export default function SignUp() {
 
 	return (
        <View style={styles.container}>
+        <LogoImage />
             <Text style={styles.header}>Sign Up</Text>
             <Text style={styles.text}>Please sign up to use the app </Text>
-            <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
             <View style={styles.columnContainer}>
 
                 <View style={styles.rowNameContainer}>
@@ -136,13 +137,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         alignItems: 'center',
         fontWeight: 'bold',
-    },
-    image: {
-        width: 65,
-        height: 60,
-        position: 'absolute',
-        top: '2.5%',
-        left: '78.5%',
     },
     input: {
         borderWidth: 1,

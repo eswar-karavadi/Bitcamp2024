@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput, TouchableOpacity} from "react-native";
 import { Link, useRouter} from 'expo-router';
 import './assets/App.css';
+import Navbar from './navbar';
+import LogoImage from './logoImage';
 
 
 export default function settings() {
@@ -10,8 +12,9 @@ export default function settings() {
     const router = useRouter();
     return (
         <View style={styles.container}>
+            <LogoImage />
+            <Navbar />
             <View style={styles.columnContainer}>
-                <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
                 <Text style = {styles.nameText}>Settings</Text>
                     <TextInput 
                             style={styles.input} 
@@ -58,28 +61,7 @@ export default function settings() {
                     onPress={() => router.push("/pages/settingsAbout")}
                 >
                     <Text style={styles.buttonText}>About</Text>
-                </TouchableOpacity>
-
-                <View style={styles.rowContainer}>
-
-                <Link href="/pages/settings" style={styles.navbar} >
-                  <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
-                </Link>
-
-                <Link href="/pages/mainpage" style={styles.navbar}>
-                <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
-                </Link>
-
-                <Link href="/pages/profile" style={styles.navbar}>
-                <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-                </Link>
-
-                  
-                  
-
-                  </View>
-                
-           
+                </TouchableOpacity>      
             </View>
             <StatusBar style="auto" />
         </View>
@@ -103,13 +85,6 @@ const styles = StyleSheet.create({
         fontSize: 36,
         alignItems: 'center',
         top: '0%',
-    },
-    image: {
-      width: 65,
-      height: 60,
-      position: 'absolute',
-      top: '2.5%',
-      left: '78.5%',
     },
     navbar: {
       flex: 1,

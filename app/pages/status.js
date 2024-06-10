@@ -2,11 +2,15 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 import { Link } from 'expo-router';
 import './assets/App.css';
+import Navbar from './navbar';
+import LogoImage from './logoImage';
 
 
 export default function status() {
     return (
         <View style={styles.container}>
+            <LogoImage />
+            <Navbar />
             <View style={styles.columnContainer}>
                 <Text style = {styles.nameText}>Breakdown of Status</Text>
                 <Text style = {styles.nameText}>0 - 99 - Rookie</Text>
@@ -17,20 +21,6 @@ export default function status() {
                 
            
             </View>
-                            <View style={styles.rowContainer}>
-
-                <Link href="/pages/settings" style={styles.navbar} >
-                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
-                </Link>
-
-                <Link href="/pages/mainpage" style={styles.navbar}>
-                    <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
-                </Link>
-
-                <Link href="/pages/profile" style={styles.navbar}>
-                    <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-                </Link>
-                </View>
             <StatusBar style="auto" />
         </View>
     );
@@ -55,13 +45,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         top: '25%',
         margin: 20
-    },
-    image: {
-      width: 65,
-      height: 60,
-      position: 'absolute',
-      top: '2.5%',
-      left: '78.5%',
     },
     buttons: {
         alignItems: 'center',

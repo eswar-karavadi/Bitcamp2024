@@ -3,13 +3,16 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput } from 'react-native';
 import { Link } from 'expo-router';
 import './assets/App.css';
+import Navbar from './navbar';
+import LogoImage from './logoImage';
 
 export default function findbuddy() {
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
 	return (
         <View style={styles.container}>
-            <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
+            <LogoImage />
+            <Navbar />
             <View style = {styles.columnContainer}>
                 <View style={styles.rowEmailContainer}>
                     <Text style={styles.nameText}>1. What time are you looking to workout today?: </Text>
@@ -28,21 +31,6 @@ export default function findbuddy() {
                         onChangeText={(val) => setPwd(val)}
                     />
                 </View>
-            </View>
-
-            <View style={styles.rowContainer}>
-
-                <Link href="/pages/settings" style={styles.navbar} >
-                  <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
-                </Link>
-
-                <Link href="/pages/mainpage" style={styles.navbar}>
-                <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
-                </Link>
-
-                <Link href="/pages/profile" style={styles.navbar}>
-                <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-                </Link>
             </View>
             <StatusBar style="auto" />
         </View>
@@ -72,13 +60,6 @@ const styles = StyleSheet.create({
     nameText: {
         fontSize: 18,
         alignItems: 'center',
-    },
-    image: {
-        width: 65,
-        height: 60,
-        position: 'absolute',
-        top: '2.5%',
-        left: '78.5%',
     },
     input: {
         borderWidth: 1,

@@ -150,6 +150,16 @@ export default function RootLayout() {
                 }}
             />
 
+            <Stack.Screen
+                name='pages/tutorials'
+                options={{
+                    headerTitle: "Tutorials",
+                    headerStyle: {
+                        backgroundColor: '#D90429',
+                    }
+                }}
+            />
+
         </Stack>
 
 

@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, Image, Button, TextInput, TouchableOpacity } fr
 import { Link, useRouter } from 'expo-router';
 import './assets/App.css';
 import { useLocalSearchParams } from 'expo-router';
+import Navbar from './navbar';
+import LogoImage from './logoImage';
 
 
 export default function viewday() {
@@ -11,7 +13,8 @@ export default function viewday() {
     const router = useRouter();
    return(
         <View style={styles.container}>
-            <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
+            <LogoImage />
+            <Navbar />
             <View style={styles.columnContainer}>
                 <Text style={styles.nameText}>{displayDay}</Text>
 
@@ -80,24 +83,6 @@ export default function viewday() {
                 </View>
                 
             </View>
-            <View style={styles.rowContainer}>
-
-                <Link href="/pages/settings" style={styles.navbar} >
-                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar} />
-                </Link>
-
-                <Link href="/pages/mainpage" style={styles.navbar}>
-                    <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
-                </Link>
-
-                <Link href="/pages/profile" style={styles.navbar}>
-                    <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-                </Link>
-
-
-
-
-            </View>
             <StatusBar style="auto" />
         </View>
     );
@@ -112,7 +97,6 @@ const styles = StyleSheet.create({
     columnContainer: {
         flexDirection: 'column',
         alignItems: 'center',
-        top: '15%',
     },
     columnContainer2: {
         flexDirection: 'column',
@@ -164,13 +148,6 @@ const styles = StyleSheet.create({
         bottom: 0,
         backgroundColor: 'rgba(0,0,0,0.5)',
         pointerEvents: 'none',
-    },
-    image: {
-        width: 65,
-        height: 60,
-        position: 'absolute',
-        top: '2.5%',
-        left: '78.5%',
     },
     infoImage: {
         width: 30,

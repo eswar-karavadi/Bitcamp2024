@@ -6,7 +6,7 @@ import './assets/App.css';
 import { FIREBASE_AUTH } from '../../Firebase/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-
+import LogoImage from './logoImage';
 
 
 export default function Login() {
@@ -33,17 +33,12 @@ export default function Login() {
 
         
     };
-
-
-    
-    
-
     
 	return (
         <View style={styles.container}>
+            <LogoImage />
             <Text style={styles.header}>Login</Text>
             <Text style = {styles.text}>Please sign in to continue: </Text>
-            <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
             <View style = {styles.columnContainer}>
                 <View style={styles.rowEmailContainer}>
                     <Text style={styles.nameText}>Email: </Text>
@@ -114,13 +109,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         fontWeight: 'bold',
     },
-    image: {
-        width: 65,
-        height: 60,
-        position: 'absolute',
-        top: '2.5%',
-        left: '78.5%',
-    },
     input: {
         borderWidth: 1.5,
         borderColor: '#777',
@@ -146,7 +134,7 @@ const styles = StyleSheet.create({
     },
     buttons: {
         alignItems: 'center',
-        top: '30%',
+        bottom: '20%',
         backgroundColor: '#D90429',
         padding: 15,
         borderRadius: 25,

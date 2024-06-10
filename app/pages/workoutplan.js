@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from "react-native";
 import { Link, useRouter } from 'expo-router';
 import './assets/App.css';
+import Navbar from './navbar';
+import LogoImage from './logoImage';
 
 
 export default function workoutplan() {
@@ -10,8 +12,9 @@ export default function workoutplan() {
     const router = useRouter();
     return (
         <View style={styles.container}>
+          <LogoImage />
+          <Navbar />
             <View style={styles.columnContainer}>
-                <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
                 <TouchableOpacity
                     style={styles.buttons}
                     onPress={() => router.push("/pages/createplanhome")}
@@ -28,23 +31,6 @@ export default function workoutplan() {
  
                 <Text style = {styles.streak}>Current Workout Streak: </Text>
                 <Text style = {styles.streak}>{counter}</Text>
-
-                <View style={styles.rowContainer}>
-
-                  <Link href="/pages/settings" style={styles.navbar} >
-                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
-                  </Link>
-
-                  <Link href="/pages/mainpage" style={styles.navbar}>
-                  <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
-                  </Link>
-
-                  <Link href="/pages/profile" style={styles.navbar}>
-                  <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-                  </Link>
-                </View>
-                
-           
             </View>
             <StatusBar style="auto" />
         </View>
@@ -69,14 +55,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         top: '40%',
     },
-    image: {
-      width: 65,
-      height: 60,
-      position: 'absolute',
-      top: '2.5%',
-      left: '78.5%',
-    },
-
     streak: {
       fontSize: 30,
       alignItems: 'center',

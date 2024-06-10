@@ -2,12 +2,15 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 import { Link } from 'expo-router';
 import './assets/App.css';
+import Navbar from './navbar';
+import LogoImage from './logoImage';
 
 
 export default function profile() {
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/terpfitLogo.png')} style={styles.image} />
+            <LogoImage />
+            <Navbar />
             <Image source={require('../assets/terpfitLogo.png')} style={styles.avatar} />
 
             <View style={styles.columnContainer}>
@@ -17,21 +20,6 @@ export default function profile() {
                 <Text style = {styles.nameText}>Status: </Text>
                 <Link href="/pages/status" style = {styles.buttons}>i</Link>
            
-            </View>
-
-             <View style={styles.rowContainer}>
-                <Link href="/pages/settings" style={styles.navbar} >
-                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
-                </Link>
-
-                <Link href="/pages/mainpage" style={styles.navbar}>
-                    <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
-                </Link>
-
-                <Link href="/pages/profile" style={styles.navbar}>
-                    <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-
-                </Link>
             </View>
             <StatusBar style="auto" />
         </View>
@@ -57,14 +45,6 @@ const styles = StyleSheet.create({
         top: '30%',
         fontWeight: 'bold',
     },
-    image: {
-      width: 65,
-      height: 60,
-      position: 'absolute',
-      top: '2.5%',
-      left: '78.5%',
-    },
-
     buttons: {
         alignItems: 'center',
         top: '40%',
