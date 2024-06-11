@@ -7,7 +7,7 @@ export default function Navbar() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.navbarText}>________________________________________</Text>
+            <Text style={styles.navbarText}>______________________________________</Text>
             <View style={styles.rowContainer}>
                 <Link href="/pages/settings">
                     <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar} />
@@ -36,8 +36,8 @@ const styles = StyleSheet.create({
     },
     navbar: {
         flex: 1,
-        width: 133.33333333,
-        height: 80,
+        width: 115,
+        height: 71.875,
         marginHorizontal: 3,
     },
 

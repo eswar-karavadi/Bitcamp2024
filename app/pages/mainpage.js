@@ -74,14 +74,12 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       top: '10%',
     },
-
-  rowContainer: {
+    rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     top: '50%',
-  }, 
-
-  buttons: {
+    }, 
+    buttons: {
     alignItems: 'center',
     top: '25%',
     backgroundColor: '#D90429',
@@ -89,10 +87,9 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     marginVertical: 35,
     borderWidth: 3,
-},
-buttonText: {
+    },
+    buttonText: {
     color: 'white',
     fontSize: 36,
-}
-
+    }
 });

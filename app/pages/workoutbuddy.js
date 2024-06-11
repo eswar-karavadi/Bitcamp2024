@@ -23,7 +23,7 @@ export default function workoutbuddy() {
 
                 <TouchableOpacity
                     style={styles.buttons}
-                    onPress={() => router.push("/pages/view buddy")}
+                    onPress={() => router.push("/pages/viewbuddy")}
                 >
                     <Text style={styles.buttonText}>View Buddies</Text>
                 </TouchableOpacity>
@@ -88,6 +88,4 @@ buttonText: {
     color: 'white',
     fontSize: 36,
 }
-
-
 });

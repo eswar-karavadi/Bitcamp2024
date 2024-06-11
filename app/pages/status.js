@@ -12,7 +12,7 @@ export default function status() {
             <LogoImage />
             <Navbar />
             <View style={styles.columnContainer}>
-                <Text style = {styles.nameText}>Breakdown of Status</Text>
+                <Text style = {styles.header}>Breakdown of Status</Text>
                 <Text style = {styles.nameText}>0 - 99 - Rookie</Text>
                 <Text style = {styles.nameText}>100 - 199 - Amateur</Text>
                 <Text style = {styles.nameText}>200 - 299 - Regular</Text>
@@ -33,6 +33,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    header: {
+        fontSize: 40,
+        alignItems: 'center',
+        top: '17%',
+
+    },
     columnContainer: {
         flexDirection: 'column',
         alignItems: 'center',
@@ -41,10 +47,10 @@ const styles = StyleSheet.create({
 
     },
     nameText: {
-        fontSize: 36,
+        fontSize: 40,
         alignItems: 'center',
-        top: '25%',
-        margin: 20
+        top: '23%',
+        margin: 20,
     },
     buttons: {
         alignItems: 'center',

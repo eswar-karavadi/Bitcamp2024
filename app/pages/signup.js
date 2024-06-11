@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     },
     buttons: {
         alignItems: 'center',
-        top: '30%',
+        bottom: '15%',
         backgroundColor: '#D90429',
         padding: 15,
         borderRadius: 30,

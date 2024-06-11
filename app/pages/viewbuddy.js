@@ -10,21 +10,21 @@ export default function viewbuddy() {
     return (
         <View style={styles.container}>
             <LogoImage />
-            <Navbar />
             <View style={styles.columnContainerMain}>
-                <View style={styles.rowContainer1}>
+                <View style={styles.rowContainer}>
                     <Image source={require('../assets/terpfitLogo.png')} style={styles.avatar}/>
                     <Link href="/pages/workoutplan" style = {styles.buttons}>Name</Link>
                 </View>
-                <View style={styles.rowContainer2}>
+                <View style={styles.rowContainer}>
                     <Image source={require('./assets/logo.png')} style={styles.avatar}/>
                     <Link href="/pages/login" style = {styles.buttons}>Name</Link>
                 </View>
-                <View style={styles.rowContainer3}>
+                <View style={styles.rowContainer}>
                     <Image source={require('./assets/logo.png')} style={styles.avatar}/>
                     <Link href="/pages/login" style = {styles.buttons}>Name</Link>
                 </View>
             </View>
+            <Navbar />
             <StatusBar style="auto" />
         </View>
     );
@@ -37,9 +37,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    columnContainer: {
+    columnContainerMain: {
         flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'left',
         position: 'absolute',
         top: '0%',
     },
@@ -54,38 +54,19 @@ const styles = StyleSheet.create({
         fontSize: 36,
         padding: 40
     },
-    navbar: {
-      width: 150,
-      height: 90,
-      alignItems: 'center',
-      top: '30%',
-    },
-
-  rowContainer: {
+    rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    top: '50%',
-  },
-  rowContainer1: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      top: '0%',
-  },
-  rowContainer2: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      top: '20%',
-  },
-  rowContainer3: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      top: '40%',
-  },
-  homeLogo: {
+    top: '0%',
+    },
+    homeLogo: {
     width: 0,
     height: 0,
     top: '0%',
     margin: 70,
+  },
+  avatar: {
+    width: 80,
+    height: 80,
   }
-
 });

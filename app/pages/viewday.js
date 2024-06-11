@@ -14,7 +14,6 @@ export default function viewday() {
    return(
         <View style={styles.container}>
             <LogoImage />
-            <Navbar />
             <View style={styles.columnContainer}>
                 <Text style={styles.nameText}>{displayDay}</Text>
 
@@ -81,8 +80,8 @@ export default function viewday() {
                             <Image source={require('../assets/plusImage.png')} style={styles.infoImage} />
                     </TouchableOpacity>
                 </View>
-                
             </View>
+            <Navbar />
             <StatusBar style="auto" />
         </View>
     );
@@ -180,12 +179,6 @@ const styles = StyleSheet.create({
         fontSize: 36,
         padding: 40
     },
-    navbar: {
-        width: 150,
-        height: 90,
-        alignItems: 'center',
-        bottom: '24%',
-    },
 
     rowContainer: {
         flexDirection: 'row',
@@ -214,5 +207,4 @@ const styles = StyleSheet.create({
         top: '0%',
         margin: 70,
     }
-
 });

@@ -8,21 +8,20 @@ import LogoImage from './logoImage';
 export default function tutorials() {
     const router = useRouter();
     return (
-
         <View style={styles.container}>
             <LogoImage />
-
+            <ScrollView contentContainerStyle={styles.scrollContainer}>
+            
             <Text style={styles.headingText}>Tutorial Videos</Text>
-
             <View style={styles.columnContainer}>
-                <ScrollView>
                 
                     <TouchableOpacity
                         onPress={() => {
                             Linking.openURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
                         }}
                     >
-                        <Image source={{ uri: 'https://i.ytimg.com/vi/UwipvPhilHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR5CLhEcuN1YKCTidtqZeGRFaE3g' }} style={styles.image} />
+                        <Image source={{ uri: 'https://i.ytimg.com/vi/UwipvPhilHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR5CLhEcuN1YKCTidtqZeGRFaE3g' }} 
+                            style={styles.image} />
                         <Text style={styles.videoText}>Shoulder Press</Text>
                     </TouchableOpacity>
 
@@ -31,6 +30,8 @@ export default function tutorials() {
                             Linking.openURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
                         }}
                     >
+                        <Image source={{ uri: 'https://i.ytimg.com/vi/UwipvPhilHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR5CLhEcuN1YKCTidtqZeGRFaE3g' }} 
+                            style={styles.image} />
                         <Text style={styles.videoText}>Flat Dumbell Press</Text>
                     </TouchableOpacity>
 
@@ -39,6 +40,8 @@ export default function tutorials() {
                             Linking.openURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
                         }}
                     >
+                        <Image source={{ uri: 'https://i.ytimg.com/vi/UwipvPhilHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR5CLhEcuN1YKCTidtqZeGRFaE3g' }} 
+                            style={styles.image} />
                         <Text style={styles.videoText}>Hamstring Curl</Text>
                     </TouchableOpacity>
 
@@ -47,13 +50,16 @@ export default function tutorials() {
                             Linking.openURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
                         }}
                     >
+                        <Image source={{ uri: 'https://i.ytimg.com/vi/UwipvPhilHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR5CLhEcuN1YKCTidtqZeGRFaE3g' }} 
+                            style={styles.image} />
                         <Text style={styles.videoText}>Rope Bicep Curl</Text>
                     </TouchableOpacity>
                 
-                </ScrollView>
 
             </View>
               <StatusBar style="auto" />
+            </ScrollView>
+            <Navbar />
 
         </View>
     );
@@ -66,6 +72,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    styleContainer: {
+        flexGrow: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    },
     columnContainer: {
         flexDirection: 'column',
         alignItems: 'center',
@@ -75,15 +87,15 @@ const styles = StyleSheet.create({
         fontSize: 24,
         alignItems: 'center',
         fontWeight: 'bold',
-        top: '10%',
+        top: '3%',
     },
     videoText: {
         fontSize: 24,
         alignItems: 'center',
-        marginVertical: 100,
+        marginVertical: 40,
     },
     image: {
-        width: 200,
-        height: 120,
+        width: 388,
+        height: 300,
     }
 });
