@@ -6,7 +6,7 @@ import './assets/App.css';
 import { FIREBASE_AUTH } from '../../Firebase/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-
+import LogoImage from './logoImage';
 
 
 export default function Login() {
@@ -33,16 +33,12 @@ export default function Login() {
 
         
     };
-
-
-    
-    
-
     
 	return (
         <View style={styles.container}>
+            <LogoImage />
             <Text style={styles.header}>Login</Text>
-            <Image source={require('./assets/logo.png')} style={styles.image} />
+            <Text style = {styles.text}>Please sign in to continue: </Text>
             <View style = {styles.columnContainer}>
                 <View style={styles.rowEmailContainer}>
                     <Text style={styles.nameText}>Email: </Text>
@@ -94,39 +90,42 @@ const styles = StyleSheet.create({
         left: '5%'
     },
     header: {
-        fontSize: 24,
+        fontSize: 45,
+        fontWeight: 'bold',
         alignItems: 'center',
         position: 'absolute',
-        top: '15%',
+        top: '11%',
     },
+    text: {
+        fontSize: 26,
+        alighItems: 'center',
+        position: 'absolute',
+        top: '20%',
+
+    },
+
     nameText: {
-        fontSize: 18,
+        fontSize: 25,
         alignItems: 'center',
-    },
-    image: {
-        width: 50,
-        height: 48,
-        position: 'absolute',
-        top: '2.5%',
-        left: '82.5%',
+        fontWeight: 'bold',
     },
     input: {
-        borderWidth: 1,
+        borderWidth: 1.5,
         borderColor: '#777',
         position: 'absolute',
-        padding: 8,
-        width: 200,
-        left: '100%'
+        padding: 20,
+        width: 170,
+        left: '150%',
     },
     rowEmailContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '20%',
+        top: '30%',
     },
     rowPasswordContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '40%',    
+        top: '115%',    
     },
     loginStyle: {
         fontSize: 18,
@@ -135,9 +134,9 @@ const styles = StyleSheet.create({
     },
     buttons: {
         alignItems: 'center',
-        top: '10%',
+        bottom: '20%',
         backgroundColor: '#D90429',
-        padding: 10,
+        padding: 15,
         borderRadius: 30,
         marginVertical: 10,
         borderWidth: 3,

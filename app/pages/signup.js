@@ -8,6 +8,7 @@ import { useRouter } from 'expo-router';
 import { FIREBASE_AUTH } from '../../Firebase/firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { TouchableOpacity } from 'react-native';
+import LogoImage from './logoImage';
 
 
 
@@ -40,8 +41,9 @@ export default function SignUp() {
 
 	return (
        <View style={styles.container}>
+        <LogoImage />
             <Text style={styles.header}>Sign Up</Text>
-            <Image source={require('./assets/logo.png')} style={styles.image} />
+            <Text style={styles.text}>Please sign up to use the app </Text>
             <View style={styles.columnContainer}>
 
                 <View style={styles.rowNameContainer}>
@@ -117,49 +119,52 @@ const styles = StyleSheet.create({
         left: '5%'
     },
     header: {
-        fontSize: 24,
+        fontSize: 45,
         alignItems: 'center',
         position: 'absolute',
-        top: '15%',
+        top: '12%',
+        fontWeight: 'bold',
     },
+    text: {
+        fontSize: 20,
+        alignItems: 'center',
+        position: 'absolute',
+        top: '21%',
+
+    },
+
     nameText: {
-        fontSize: 18,
+        fontSize: 20,
         alignItems: 'center',
-    },
-    image: {
-        width: 50,
-        height: 48,
-        position: 'absolute',
-        top: '2.5%',
-        left: '82.5%',
+        fontWeight: 'bold',
     },
     input: {
         borderWidth: 1,
         borderColor: '#777',
         position: 'absolute',
         padding: 8,
-        width: 200,
+        width: 170,
         left: '100%'
     },
     rowNameContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '0%',    
+        top: '5%',    
     },
     rowEmailContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '20%',
+        top: '30%',
     },
     rowPasswordContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '40%',    
+        top: '55%',    
     },
     rowConfirmPasswordContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        top: '60%',    
+        top: '80%',    
     },
     registerStyle: {
         fontSize: 18,
@@ -168,9 +173,9 @@ const styles = StyleSheet.create({
     },
     buttons: {
         alignItems: 'center',
-        top: '20%',
+        bottom: '15%',
         backgroundColor: '#D90429',
-        padding: 10,
+        padding: 15,
         borderRadius: 30,
         marginVertical: 10,
         borderWidth: 3,

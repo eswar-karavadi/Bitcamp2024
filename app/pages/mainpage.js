@@ -1,39 +1,43 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button } from "react-native";
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity} from "react-native";
+import { Link, useRouter} from 'expo-router';
 import './assets/App.css';
-
+import Navbar from './navbar';
+import LogoImage from './logoImage';
 
 export default function Mainpage() {
+    const router = useRouter();
     return (
         <View style={styles.container}>
+            <LogoImage />
+            <Navbar />
             <View style={styles.columnContainer}>
-                <Image source={require('./assets/logo.png')} style={styles.image} />
-                <Link href="/pages/workoutplan" style = {styles.buttons}>See Workout Plan</Link>
-                <Link href="/pages/workoutbuddy" style = {styles.buttons}>Find Workout Buddy</Link>
-                <Link href="/pages/login" style = {styles.buttons}>Machine Availability</Link>
-                <View style={styles.rowContainer}>
+                <Text style = {styles.text}>Empower Your Day With TerpFit! </Text>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/workoutplan")}
+                >
+                    <Text style={styles.buttonText}>See Workout Plan</Text>
+                </TouchableOpacity>
 
-                <Link href="/pages/signup" style={styles.navbar} >
-                  <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
-                </Link>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/workoutbuddy")}
+                >
+                    <Text style={styles.buttonText}>Find Workout Buddy</Text>
+                </TouchableOpacity>
 
-                <Link href="/pages/mainpage" style={styles.navbar}>
-                <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
-                </Link>
-
-                <Link href="/pages/profile" style={styles.navbar}>
-                <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-                </Link>
-
-                  
-                  
-
-                  </View>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/tutorials")}
+                >
+                    <Text style={styles.buttonText}>Tutorials</Text>
+                </TouchableOpacity>
                 
            
             </View>
-            <StatusBar style="auto" />
+                <StatusBar style="auto" />
+
         </View>
     );
 }
@@ -56,18 +60,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         top: '40%',
     },
-    image: {
-      width: 50,
-      height: 48,
-      position: 'absolute',
-      top: '2.5%',
-      left: '82.5%',
-    },
-    buttons: {
+    text: {
+        fontSize: 24,
         alignItems: 'center',
         top: '20%',
-        fontSize: 36,
-        padding: 40
+        fontWeight: 'bold',
     },
     navbar: {
       flex: 1,
@@ -75,13 +72,24 @@ const styles = StyleSheet.create({
       width: 150,
       height: 90,
       alignItems: 'center',
-      top: '27%',
+      top: '10%',
     },
-
-  rowContainer: {
+    rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     top: '50%',
-  }
-
+    }, 
+    buttons: {
+    alignItems: 'center',
+    top: '25%',
+    backgroundColor: '#D90429',
+    padding: 10,
+    borderRadius: 30,
+    marginVertical: 35,
+    borderWidth: 3,
+    },
+    buttonText: {
+    color: 'white',
+    fontSize: 36,
+    }
 });

@@ -2,35 +2,25 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 import { Link } from 'expo-router';
 import './assets/App.css';
+import Navbar from './navbar';
+import LogoImage from './logoImage';
 
 
 export default function status() {
     return (
         <View style={styles.container}>
+            <LogoImage />
+            <Navbar />
             <View style={styles.columnContainer}>
-                <Text style = {styles.nameText}>Breakdown of Status</Text>
-                <Text style = {styles.nameText}>0 - 99 -> Rookie</Text>
-                <Text style = {styles.nameText}>100 - 199 ->Amateur</Text>
-                <Text style = {styles.nameText}>200 - 299 ->Regular</Text>
-                <Text style = {styles.nameText}>300 - 399 ->Pro</Text>
-                <Text style = {styles.nameText}>400 - 499 ->Expert</Text>
+                <Text style = {styles.header}>Breakdown of Status</Text>
+                <Text style = {styles.nameText}>0 - 99 - Rookie</Text>
+                <Text style = {styles.nameText}>100 - 199 - Amateur</Text>
+                <Text style = {styles.nameText}>200 - 299 - Regular</Text>
+                <Text style = {styles.nameText}>300 - 399 - Pro</Text>
+                <Text style = {styles.nameText}>400 - 499 - Expert</Text>
                 
            
             </View>
-                            <View style={styles.rowContainer}>
-
-                <Link href="/pages/signup" style={styles.navbar} >
-                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
-                </Link>
-
-                <Link href="/pages/mainpage" style={styles.navbar}>
-                    <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
-                </Link>
-
-                <Link href="/pages/profile" style={styles.navbar}>
-                    <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-                </Link>
-                </View>
             <StatusBar style="auto" />
         </View>
     );
@@ -43,6 +33,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    header: {
+        fontSize: 40,
+        alignItems: 'center',
+        top: '17%',
+
+    },
     columnContainer: {
         flexDirection: 'column',
         alignItems: 'center',
@@ -51,17 +47,10 @@ const styles = StyleSheet.create({
 
     },
     nameText: {
-        fontSize: 36,
+        fontSize: 40,
         alignItems: 'center',
-        top: '25%',
-        margin: 20
-    },
-    image: {
-      width: 50,
-      height: 48,
-      position: 'absolute',
-      top: '2.5%',
-      left: '82.5%',
+        top: '23%',
+        margin: 20,
     },
     buttons: {
         alignItems: 'center',

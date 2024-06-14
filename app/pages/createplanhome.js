@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Button, TextInput, TouchableOpacity } from "react-native";
 import { Link, useRouter } from 'expo-router';
 import './assets/App.css';
+import Navbar from './navbar';
+import LogoImage from './logoImage';
 
 
 export default function createplanhome() {
@@ -12,45 +14,25 @@ export default function createplanhome() {
 
     return (
         <View style={styles.container}>
+            <LogoImage />
+            <Navbar />
             <View style={styles.columnContainer}>
-                <Image source={require('./assets/logo.png')} style={styles.image} />
                 <Text style = {styles.nameText}>Plan Name:</Text>
                     <TextInput 
                             style={styles.input} 
                             placeholder='e.g. Push Pull Legs'
                             onChangeText={(val) => setName(val)}
                         />
-
+                <Text style = {styles.subheading}>Choose a day/input your workout for that day</Text>
                 {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day) => (
                     <TouchableOpacity
                         key={day}
                         style={styles.buttons}
                         onPress={() => router.push({ pathname: '/pages/viewday', params: { day } })}
                     >
-                        <Text style={styles.buttons}>{day}</Text>
+                        <Text style={styles.buttonText}>{day}</Text>
                     </TouchableOpacity>
                 ))}
-
-                <View style={styles.rowContainer}>
-
-                <Link href="/pages/signup" style={styles.navbar} >
-                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
-                </Link>
-
-                <Link href="/pages/mainpage" style={styles.navbar}>
-                    <Image source={require('./assets/HomeLogo.png')} style={styles.homeLogo} />
-                </Link>
-
-                <Link href="/pages/profile" style={styles.navbar}>
-                    <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-                </Link>
-
-                  
-                  
-
-                  </View>
-                
-           
             </View>
             <StatusBar style="auto" />
         </View>
@@ -74,30 +56,37 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         top: '2%',
     },
-    image: {
-      width: 50,
-      height: 48,
-      position: 'absolute',
-      top: '2.5%',
-      left: '82.5%',
-    },
-    buttons: {
+    subheading: {
+        fontSize: 19,
         alignItems: 'center',
-        top: '8%',
-        fontSize: 36,
-        padding: 20
+        top: '10%',
     },
-    navbar: {
+
+  buttons: {
+    alignItems: 'center',
+    top: '10%',
+    backgroundColor: '#D90429',
+    padding: 10,
+    borderRadius: 35,
+    marginVertical: 16,
+    borderWidth: 3,
+},
+buttonText: {
+    color: 'white',
+    fontSize: 36,
+},
+
+navbar: {
       width: 150,
       height: 90,
       alignItems: 'center',
-      bottom: '24%',
+      flex: 1,
     },
 
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    top: '40%',
+    top: '30%',
   },
 
   homeLogo: {

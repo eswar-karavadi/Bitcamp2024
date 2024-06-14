@@ -139,6 +139,89 @@ export default function RootLayout() {
                 }
             }}
             />
-                </Stack>
+
+            <Stack.Screen
+                name='pages/settings'
+                options={{
+                    headerTitle: "Settings",
+                    headerStyle: {
+                        backgroundColor: '#D90429',
+                    }
+                }}
+            />
+
+            <Stack.Screen
+                name='pages/tutorials'
+                options={{
+                    headerTitle: "Tutorials",
+                    headerStyle: {
+                        backgroundColor: '#D90429',
+                    }
+                }}
+            />
+
+            <Stack.Screen
+                name='pages/settingsAbout'
+                options={{
+                    headerTitle: "About",
+                    headerStyle: {
+                        backgroundColor: '#D90429',
+                    }
+                }}
+            />
+
+            <Stack.Screen
+                name='pages/settingsAccount'
+                options={{
+                    headerTitle: "Account",
+                    headerStyle: {
+                        backgroundColor: '#D90429',
+                    }
+                }}
+            />
+
+            <Stack.Screen
+                name='pages/settingsAppearance'
+                options={{
+                    headerTitle: "Appearance",
+                    headerStyle: {
+                        backgroundColor: '#D90429',
+                    }
+                }}
+            />
+
+            <Stack.Screen
+                name='pages/settingsHelpSupport'
+                options={{
+                    headerTitle: "Help and Support",
+                    headerStyle: {
+                        backgroundColor: '#D90429',
+                    }
+                }}
+            />
+
+            <Stack.Screen
+                name='pages/settingsNotifications'
+                options={{
+                    headerTitle: "Notifications",
+                    headerStyle: {
+                        backgroundColor: '#D90429',
+                    }
+                }}
+            />
+
+            <Stack.Screen
+                name='pages/settingsPrivacySecurity'
+                options={{
+                    headerTitle: "Privacy and Security",
+                    headerStyle: {
+                        backgroundColor: '#D90429',
+                    }
+                }}
+            />
+
+        </Stack>
+
+
     );
 };

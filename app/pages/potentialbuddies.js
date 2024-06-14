@@ -2,45 +2,28 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button } from "react-native";
 import { Link } from 'expo-router';
 import './assets/App.css';
+import Navbar from './navbar';
+import LogoImage from './logoImage';
 
 
 export default function potentialbuddies() {
     return (
         <View style={styles.container}>
+            <LogoImage />
+            <Navbar />
             <View style={styles.columnContainerMain}>
-                <Image source={require('./assets/logo.png')} style={styles.image} />
                 <View style={styles.rowContainer1}>
-                    <Image source={require('./assets/logo.png')} style={styles.avatar}/>
+                    <Image source={require('../assets/terpfitLogo.png')} style={styles.avatar}/>
                     <Link href="/pages/workoutplan" style = {styles.buttons}>Name</Link>
                 </View>
                 <View style={styles.rowContainer2}>
-                    <Image source={require('./assets/logo.png')} style={styles.avatar}/>
+                    <Image source={require('../assets/terpfitLogo.png')} style={styles.avatar}/>
                     <Link href="/pages/login" style = {styles.buttons}>Name</Link>
                 </View>
                 <View style={styles.rowContainer3}>
-                    <Image source={require('./assets/logo.png')} style={styles.avatar}/>
+                    <Image source={require('../assets/terpfitLogo.png')} style={styles.avatar}/>
                     <Link href="/pages/login" style = {styles.buttons}>Name</Link>
-                </View>
-                <View style={styles.rowContainer}>
-
-                <Link href="/pages/signup" style={styles.navbar} >
-                  <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
-                </Link>
-
-                <Link href="/pages/mainpage" style={styles.navbar}>
-                <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
-                </Link>
-
-                <Link href="/pages/profile" style={styles.navbar}>
-                <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-                </Link>
-
-                  
-                  
-
-                  </View>
-                
-           
+                </View>          
             </View>
             <StatusBar style="auto" />
         </View>
@@ -64,13 +47,6 @@ const styles = StyleSheet.create({
         fontSize: 36,
         alignItems: 'center',
         top: '40%',
-    },
-    image: {
-      width: 50,
-      height: 48,
-      position: 'absolute',
-      top: '2.5%',
-      left: '82.5%',
     },
     buttons: {
         alignItems: 'center',

@@ -1,37 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, Button } from "react-native";
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from "react-native";
+import { Link, useRouter } from 'expo-router';
 import './assets/App.css';
-
+import Navbar from './navbar';
+import LogoImage from './logoImage';
 
 export default function workoutbuddy() {
     const [counter, setCounter] = useState('0')
+    const router = useRouter();
     return (
         <View style={styles.container}>
+          <LogoImage />
+          <Navbar />
             <View style={styles.columnContainer}>
-                <Image source={require('./assets/logo.png')} style={styles.image} />
-                <Link href="/pages/findbuddy" style = {styles.buttons}>Find Buddy</Link>
-                <Link href="/pages/viewbuddy" style = {styles.buttons}>View Buddies</Link>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/findbuddy")}
+                >
+                    <Text style={styles.buttonText}>Find Buddy</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => router.push("/pages/viewbuddy")}
+                >
+                    <Text style={styles.buttonText}>View Buddies</Text>
+                </TouchableOpacity>
                 <Text style = {styles.streak}>Total Buddies: </Text>
                 <Text style = {styles.streak}>{counter}</Text>
-
-                <View style={styles.rowContainer}>
-
-                  <Link href="/pages/signup" style={styles.navbar} >
-                    <Image source={require('./assets/SettingsLogo.png')} style={styles.navbar}/>
-                  </Link>
-
-                  <Link href="/pages/mainpage" style={styles.navbar}>
-                  <Image source={require('./assets/HomeLogo.png')} style={styles.navbar} />
-                  </Link>
-
-                  <Link href="/pages/profile" style={styles.navbar}>
-                  <Image source={require('./assets/ProfileLogo.png')} style={styles.navbar} />
-                  </Link>
-                </View>
-                
-           
             </View>
             <StatusBar style="auto" />
         </View>
@@ -56,19 +53,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         top: '40%',
     },
-    image: {
-      width: 50,
-      height: 48,
-      position: 'absolute',
-      top: '2.5%',
-      left: '82.5%',
-    },
-    buttons: {
-        alignItems: 'center',
-        top: '20%',
-        fontSize: 36,
-        padding: 40
-    },
     streak: {
       fontSize: 36,
       alignItems: 'center',
@@ -91,6 +75,17 @@ const styles = StyleSheet.create({
       right: '9.5%',
 
   },
-
-
+  buttons: {
+    alignItems: 'center',
+    top: '25%',
+    backgroundColor: '#D90429',
+    padding: 10,
+    borderRadius: 30,
+    marginVertical: 35,
+    borderWidth: 3,
+},
+buttonText: {
+    color: 'white',
+    fontSize: 36,
+}
 });
