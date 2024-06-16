@@ -9,9 +9,9 @@ export default function tutorials() {
     const router = useRouter();
     return (
         <View style={styles.container}>
-            <LogoImage />
             <ScrollView contentContainerStyle={styles.scrollContainer}>
-            
+                <Image source={require('../assets/terpfitLogo.png')} style={styles.logoImageThing} />
+
             <Text style={styles.headingText}>Tutorial Videos</Text>
             <View style={styles.columnContainer}>
                 
@@ -20,9 +20,9 @@ export default function tutorials() {
                             Linking.openURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
                         }}
                     >
-                        <Image source={{ uri: 'https://i.ytimg.com/vi/UwipvPhilHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR5CLhEcuN1YKCTidtqZeGRFaE3g' }} 
-                            style={styles.image} />
                         <Text style={styles.videoText}>Shoulder Press</Text>
+                        <Image source={{ uri: 'https://i.ytimg.com/vi/UwipvPhilHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR5CLhEcuN1YKCTidtqZeGRFaE3g' }} 
+                            style={styles.image} />
                     </TouchableOpacity>
 
                     <TouchableOpacity
@@ -30,9 +30,9 @@ export default function tutorials() {
                             Linking.openURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
                         }}
                     >
-                        <Image source={{ uri: 'https://i.ytimg.com/vi/UwipvPhilHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR5CLhEcuN1YKCTidtqZeGRFaE3g' }} 
-                            style={styles.image} />
                         <Text style={styles.videoText}>Flat Dumbell Press</Text>
+                        <Image source={{ uri: 'https://i.ytimg.com/vi/UwipvPhilHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR5CLhEcuN1YKCTidtqZeGRFaE3g' }} 
+                            style={styles.image} />
                     </TouchableOpacity>
 
                     <TouchableOpacity
@@ -40,9 +40,9 @@ export default function tutorials() {
                             Linking.openURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
                         }}
                     >
-                        <Image source={{ uri: 'https://i.ytimg.com/vi/UwipvPhilHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR5CLhEcuN1YKCTidtqZeGRFaE3g' }} 
-                            style={styles.image} />
                         <Text style={styles.videoText}>Hamstring Curl</Text>
+                        <Image source={{ uri: 'https://i.ytimg.com/vi/UwipvPhilHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR5CLhEcuN1YKCTidtqZeGRFaE3g' }} 
+                            style={styles.image} />
                     </TouchableOpacity>
 
                     <TouchableOpacity
@@ -50,9 +50,9 @@ export default function tutorials() {
                             Linking.openURL('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
                         }}
                     >
+                        <Text style={styles.videoText}>Rope Bicep Curl</Text>
                         <Image source={{ uri: 'https://i.ytimg.com/vi/UwipvPhilHc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&amp;rs=AOn4CLCR5CLhEcuN1YKCTidtqZeGRFaE3g' }} 
                             style={styles.image} />
-                        <Text style={styles.videoText}>Rope Bicep Curl</Text>
                     </TouchableOpacity>
                 
 
@@ -92,10 +92,19 @@ const styles = StyleSheet.create({
     videoText: {
         fontSize: 24,
         alignItems: 'center',
-        marginVertical: 40,
+        marginVertical: 10,
     },
     image: {
         width: 388,
-        height: 300,
+        height: 210,
+        marginBottom: 30,
+    },
+    logoImageThing: {
+        position: 'absolute',
+        width: 68,
+        height: 64,
+        top: '0.5%',
+        left: '81%',
+
     }
 });
