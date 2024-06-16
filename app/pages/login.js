@@ -133,13 +133,23 @@ const styles = StyleSheet.create({
         top: '20%',
     },
     buttons: {
-        alignItems: 'center',
-        bottom: '20%',
         backgroundColor: '#D90429',
-        padding: 15,
+        paddingVertical: 15,
+        paddingHorizontal: 20,
         borderRadius: 30,
-        marginVertical: 10,
-        borderWidth: 3,
+        marginVertical: 12,
+        width: '65%',
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 5,
+        borderColor: '#000',
+        borderWidth: 2,
+        position: 'absolute',
+        top: '70%'
+        
     },
     buttonText: {
         color: 'white',
