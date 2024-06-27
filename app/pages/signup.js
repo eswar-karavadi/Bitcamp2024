@@ -88,8 +88,6 @@ export default function SignUp() {
                 </View>
             </View>
 
-            {/* <Link style={styles.registerStyle} onPress={handleSignUp} href="/pages/mainpage">Register</Link>
-            <Button title="Login" onPress={handleSignUp}  <--- eswar firebase old cahnges/> */}
 
 
             <TouchableOpacity
@@ -172,22 +170,13 @@ const styles = StyleSheet.create({
         top: '20%',
     },
     buttons: {
-        backgroundColor: '#D90429',
-        paddingVertical: 15,
-        paddingHorizontal: 20,
-        borderRadius: 30,
-        marginVertical: 12,
-        width: '65%',
         alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
-        elevation: 5,
-        borderColor: '#000',
-        borderWidth: 2,
-        position: 'absolute',
-        bottom: '14%'
+        bottom: '15%',
+        backgroundColor: '#D90429',
+        padding: 15,
+        borderRadius: 30,
+        marginVertical: 10,
+        borderWidth: 3,
     },
     buttonText: {
         color: 'white',
