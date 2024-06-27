@@ -56,8 +56,9 @@ const styles = StyleSheet.create({
     streak: {
       fontSize: 36,
       alignItems: 'center',
-      top: '40%',
-      margin: 10
+      top: '45%',
+      margin: 10,
+      fontWeight: 'bold',
     },
     navbar: {
       flex: 1,
@@ -76,13 +77,21 @@ const styles = StyleSheet.create({
 
   },
   buttons: {
-    alignItems: 'center',
-    top: '25%',
+    top: '30%',
     backgroundColor: '#D90429',
-    padding: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 20,
     borderRadius: 30,
-    marginVertical: 35,
-    borderWidth: 3,
+    marginVertical: 20,
+    width: '80%',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 5,
+    borderColor: '#000',
+    borderWidth: 2,
 },
 buttonText: {
     color: 'white',
